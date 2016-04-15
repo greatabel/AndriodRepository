@@ -1,11 +1,17 @@
 <resources>
-
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme"
+        parent="android:Theme.Holo.Light.NoActionBar.Fullscreen">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TileButton">
+        <item name="android:layout_width">@dimen/tile_size</item>
+        <item name="android:layout_height">@dimen/tile_size</item>
+        <item name="android:layout_margin">@dimen/tile_margin</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:padding">@dimen/tile_padding</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@drawable/title</item>
+    </style>
 </resources>
