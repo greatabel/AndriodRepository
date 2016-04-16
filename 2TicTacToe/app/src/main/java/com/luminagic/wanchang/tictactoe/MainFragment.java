@@ -11,13 +11,33 @@ import android.view.ViewGroup;
 import android.util.Log;
 public class MainFragment extends Fragment {
 
+    private  AlertDialog mDialog;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View rootView =
                 inflater.inflate(R.layout.fragment_main, container, false);
-        Log.d("UT3 is here", "Got a Point A");
+        Log.d("in MainFragment ", "#");
+
+        View aboutButton = rootView.findViewById(R.id.about_button);
+
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage(R.string.about_text);
+                builder.setCancelable(false);
+                builder.setPositiveButton(R.string.ok_label,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                // nothing
+                            }
+                        });
+                mDialog = builder.show();
+            }
+        });
         // Handle buttons here...
         return rootView;
     }
