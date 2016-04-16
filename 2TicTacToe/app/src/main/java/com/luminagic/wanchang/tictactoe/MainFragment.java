@@ -18,7 +18,7 @@ public class MainFragment extends Fragment {
 
         View rootView =
                 inflater.inflate(R.layout.fragment_main, container, false);
-        Log.d("in MainFragment ", "#");
+        Log.d("in MainFragment ", "# onCreateView ");
 
         View aboutButton = rootView.findViewById(R.id.about_button);
 
@@ -40,5 +40,15 @@ public class MainFragment extends Fragment {
         });
         // Handle buttons here...
         return rootView;
+    }
+
+    @Override
+    public void onPause() {
+        Log.d("in MainFragment ", "# onPause ");
+        super.onPause();
+
+        if(mDialog != null) {
+            mDialog.dismiss();
+        }
     }
 }
