@@ -19,7 +19,24 @@ public class MainFragment extends Fragment {
         View rootView =
                 inflater.inflate(R.layout.fragment_main, container, false);
         Log.d("in MainFragment ", "# onCreateView ");
+        View newButton = rootView.findViewById(R.id.new_button);
+        View continueButton = rootView.findViewById(R.id.continue_button);
+        newButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), GameActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
 
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), GameActivity.class);
+                intent.putExtra(GameActivity.KEY_RESTORE, true);
+                getActivity().startActivity(intent);
+            }
+        });
         View aboutButton = rootView.findViewById(R.id.about_button);
 
         aboutButton.setOnClickListener(new View.OnClickListener() {

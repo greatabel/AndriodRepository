@@ -4,11 +4,30 @@ package com.luminagic.wanchang.tictactoe;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class GameFragment extends Activity {
+import android.app.Fragment;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class GameFragment extends Fragment {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setRetainInstance(true);
+        InitGame();
+    }
+
+    public void InitGame() {
+        Log.d("UT3", "init game");
     }
 }
