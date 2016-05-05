@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/6TicTacToe_AddSound.iml" filepath="$PROJECT_DIR$/6TicTacToe_AddSound.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7TicTacToe_AddAnimation.iml" filepath="$PROJECT_DIR$/7TicTacToe_AddAnimation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
