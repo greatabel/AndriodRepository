@@ -11,16 +11,17 @@ import android.view.ViewGroup;
 import android.util.Log;
 public class MainFragment extends Fragment {
 
-    private  AlertDialog mDialog;
+    private AlertDialog mDialog;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View rootView =
                 inflater.inflate(R.layout.fragment_main, container, false);
-        Log.d("in MainFragment ", "# onCreateView ");
+        // Handle buttons here...
         View newButton = rootView.findViewById(R.id.new_button);
         View continueButton = rootView.findViewById(R.id.continue_button);
+        View aboutButton = rootView.findViewById(R.id.about_button);
         newButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,7 +29,6 @@ public class MainFragment extends Fragment {
                 getActivity().startActivity(intent);
             }
         });
-
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,8 +37,6 @@ public class MainFragment extends Fragment {
                 getActivity().startActivity(intent);
             }
         });
-        View aboutButton = rootView.findViewById(R.id.about_button);
-
         aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,17 +53,15 @@ public class MainFragment extends Fragment {
                 mDialog = builder.show();
             }
         });
-        // Handle buttons here...
         return rootView;
     }
 
     @Override
     public void onPause() {
-        Log.d("in MainFragment ", "# onPause ");
         super.onPause();
 
-        if(mDialog != null) {
+        // Get rid of the about dialog if it's still up
+        if (mDialog != null)
             mDialog.dismiss();
-        }
     }
 }

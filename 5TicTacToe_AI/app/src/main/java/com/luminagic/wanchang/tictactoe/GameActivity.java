@@ -59,18 +59,18 @@ public class GameActivity extends Activity {
                 });
         final Dialog dialog = builder.create();
         dialog.show();
-//        mHandler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                mMediaPlayer = MediaPlayer.create(GameActivity.this,
-//                        winner == Tile.Owner.X ? R.raw.oldedgar_winner
-//                                : winner == Tile.Owner.O ? R.raw.notr_loser
-//                                : R.raw.department64_draw
-//                );
-//                mMediaPlayer.start();
-//                dialog.show();
-//            }
-//        }, 500);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mMediaPlayer = MediaPlayer.create(GameActivity.this,
+                        winner == Tile.Owner.X ? R.raw.oldedgar_winner
+                                : winner == Tile.Owner.O ? R.raw.notr_loser
+                                : R.raw.department64_draw
+                );
+                mMediaPlayer.start();
+                dialog.show();
+            }
+        }, 500);
 
         mGameFragment.initGame();  // Reset the board to the initial position
     }
