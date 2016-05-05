@@ -75,4 +75,14 @@ public class GameActivity extends Activity {
         mGameFragment.initGame();  // Reset the board to the initial position
     }
 
+    public void startThinking() {
+        View thinkView = findViewById(R.id.thinking);
+        thinkView.setVisibility(View.VISIBLE);
+    }
+
+    public void stopThinking() {
+        View thinkView = findViewById(R.id.thinking);
+        thinkView.setVisibility(View.GONE);
+    }
+
 }
