@@ -12,10 +12,20 @@ import android.view.ViewGroup;
 
 public class Tile  {
 
-    private Owner mOwner = Owner.NEITHER;
+
     public enum Owner {
         X, O /* letter O */, NEITHER, BOTH
     }
+
+    private final GameFragment mGame;
+    private Owner mOwner = Owner.NEITHER;
+    private View mView;
+    private Tile mSubTiles[];
+
+    public Tile(GameFragment game) {
+        this.mGame = game;
+    }
+
 
     public void setOwner(Owner owner) {
         this.mOwner = owner;
