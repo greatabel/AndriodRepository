@@ -19,6 +19,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class GameFragment extends Fragment {
+    
+    static private int mLargeIds[] = {R.id.large1, R.id.large2, R.id.large3,
+            R.id.large4, R.id.large5, R.id.large6, R.id.large7, R.id.large8,
+            R.id.large9,};
+    static private int mSmallIds[] = {R.id.small1, R.id.small2, R.id.small3,
+            R.id.small4, R.id.small5, R.id.small6, R.id.small7, R.id.small8,
+            R.id.small9,};
 
     private int mLastLarge;
     private int mLastSmall;
