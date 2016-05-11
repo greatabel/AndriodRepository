@@ -30,8 +30,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         // Get a handle to all user interface elements
         urlText = (EditText) findViewById(R.id.url_field);
         goButton = (Button) findViewById(R.id.go_button);
@@ -63,9 +61,7 @@ public class MainActivity extends Activity {
     private void openBrowser() {
         webView.getSettings().setJavaScriptEnabled(true);
         // http://stackoverflow.com/questions/7305089/how-to-load-external-webpage-inside-webview
-        webView.setWebViewClient(new WebViewClient() {
-
-        });
+        webView.setWebViewClient(new WebViewClient() { });
 
         Log.d("@2", "something happen");
         webView.loadUrl(urlText.getText().toString());
