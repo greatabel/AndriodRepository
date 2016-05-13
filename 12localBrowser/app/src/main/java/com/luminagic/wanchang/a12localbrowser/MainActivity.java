@@ -22,6 +22,11 @@ public class MainActivity extends Activity {
     private TextView textView;
     private Button button;
 
+    private class AndroidBridge {
+    
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
