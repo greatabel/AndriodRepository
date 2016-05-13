@@ -23,7 +23,16 @@ public class MainActivity extends Activity {
     private Button button;
 
     private class AndroidBridge {
-    
+        @JavascriptInterface
+        public void callAndroid(final String arg) {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d(TAG, "callAndroid" + arg + ")");
+                    textView.setText(arg);
+                }
+            });
+        }
 
     }
 
