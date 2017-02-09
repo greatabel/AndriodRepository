@@ -30,5 +30,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initThreading();
+        findViews();
     }
+
+    /**
+     * Initialize multi-threading. There are two threads: 1) The main
+     * graphical user interface thread already started by Android,
+     * and 2) The suggest thread, which we start using an executor.
+     */
+    private void initThreading() {
+
+    }
+
+    private void findViews() {
+
+    }
+
 }
