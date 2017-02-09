@@ -13,6 +13,8 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Random;
+
 
 public class MainActivity extends Activity {
 
@@ -50,7 +52,7 @@ public class MainActivity extends Activity {
 
         //Turn on Javascript in the embedded browser
         webView.getSettings().setJavaScriptEnabled(true);
-        
+
         // load the web page from a local asset
         webView.loadUrl("file:///android_asset/index.html");
 
@@ -58,7 +60,10 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick(" + v + ")");
-                webView.loadUrl("javascript:callJS('Hello from Android')");
+                //note a single Random object is reused here
+                Random randomGenerator = new Random();
+                int randomInt = randomGenerator.nextInt(1000);
+                webView.loadUrl("javascript:callJS('Hello from Android."+randomInt+ "')");
             }
         });
     }
