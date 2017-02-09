@@ -56,6 +56,9 @@ public class MainActivity extends Activity {
         // load the web page from a local asset
         webView.loadUrl("file:///android_asset/index.html");
 
+        // expose a Java object to javascript in the browser
+        webView.addJavascriptInterface(new AndroidBridge(),"android");
+
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
