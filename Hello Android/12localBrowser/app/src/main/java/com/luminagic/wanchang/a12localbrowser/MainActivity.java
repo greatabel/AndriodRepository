@@ -45,7 +45,23 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         webView = (WebView)findViewById(R.id.web_view);
+        textView = (TextView)findViewById(R.id.text_view);
+        button = (Button)findViewById(R.id.button);
+
+        //Turn on Javascript in the embedded browser
+        webView.getSettings().setJavaScriptEnabled(true);
+        
         // load the web page from a local asset
         webView.loadUrl("file:///android_asset/index.html");
+
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick(" + v + ")");
+                webView.loadUrl("javascript:callJS('Hello from Android')");
+            }
+        });
     }
+
+
 }
