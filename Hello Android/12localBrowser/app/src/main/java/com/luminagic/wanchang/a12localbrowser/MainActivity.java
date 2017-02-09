@@ -36,9 +36,16 @@ public class MainActivity extends Activity {
 
     }
 
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        webView = (WebView)findViewById(R.id.web_view);
+        // load the web page from a local asset
+        webView.loadUrl("file:///android_asset/index.html");
     }
 }
