@@ -59,6 +59,20 @@ public class MainActivity extends Activity {
         // expose a Java object to javascript in the browser
         webView.addJavascriptInterface(new AndroidBridge(),"android");
 
+        // Set up a function to be called when JavaScript tries
+        // to open an alert window
+        webView.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public boolean onJsAlert(final WebView view,
+                                     final  String url, final  String message, JsResult result) {
+                Log.d(TAG, "onJsAlert(" + view + ", " + url + ", "
+                        + message + ", " + result + ")");
+                Toast.makeText(MainActivity.this, message+" @-@", Toast.LENGTH_LONG).show();
+                result.confirm();
+                return true; // I handled it
+            }
+        });
+
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
