@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         initThreading();
         findViews();
+        setListeners();
+        setAdapters();
     }
 
     /**
@@ -46,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void findViews() {
 
+    }
+
+    private void setListeners() {
+
+    }
+    private void setAdapters() {
+        
     }
 
 }
