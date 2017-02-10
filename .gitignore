@@ -1,3 +1,7 @@
+# Ignore gradle files
+.gradle/
+build/
+
 *.iml
 .gradle
 /local.properties
