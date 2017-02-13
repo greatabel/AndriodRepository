@@ -1,7 +1,10 @@
 package com.luminagic.wanchang.a16event;
 
 import android.app.ListActivity;
+import android.app.LoaderManager;
 import android.content.ContentValues;
+import android.content.CursorLoader;
+import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.SimpleCursorAdapter;
@@ -15,7 +18,13 @@ import static com.luminagic.wanchang.a16event.Constants.TIME;
 import static com.luminagic.wanchang.a16event.Constants.TITLE;
 
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends ListActivity implements
+        LoaderManager.LoaderCallbacks<Cursor> {
+
+    private final static int LOADER_ID = 1;
+
+    private SimpleCursorAdapter mAdapter;
+
 
     private static String[] FROM = {_ID, TIME, TITLE,};
     private static String ORDER_BY = TIME + " DESC";
@@ -33,9 +42,17 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addEvent("Hello, Android!");
-        Cursor cursor = getEvents();
-        showEvents(cursor);
+//        addEvent("Hello, Android!");
+//        Cursor cursor = getEvents();
+//        showEvents(cursor);
+        mAdapter = new SimpleCursorAdapter(this, R.layout.item, null,
+                FROM, TO, 0);
+        setListAdapter(mAdapter);
+
+        LoaderManager lm = getLoaderManager();
+        lm.initLoader(LOADER_ID, null, this);
+
+        addEvent("Test loader");
     }
 
     private void addEvent(String string) {
@@ -52,16 +69,37 @@ public class MainActivity extends ListActivity {
         getContentResolver().insert(CONTENT_URI, values);
     }
 
-    private Cursor getEvents() {
-        // Perform a managed query. The Activity will handle closing
-        // and re-querying the cursor when needed.
-//        SQLiteDatabase db = events.getReadableDatabase();
-//        Cursor cursor = db.query(TABLE_NAME, FROM, null, null, null,
-//                null, ORDER_BY);
-//        startManagingCursor(cursor);
-//        return cursor;
-        return managedQuery(CONTENT_URI, FROM, null,null, ORDER_BY);
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        // Create a new CursorLoader
+        return new CursorLoader(this, CONTENT_URI, FROM, null, null, ORDER_BY);
     }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+        switch (loader.getId()) {
+            case LOADER_ID:
+                // The data is now available to use
+                mAdapter.swapCursor(cursor);
+                break;
+        }
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+        // The loader's data is unavailable
+        mAdapter.swapCursor(null);
+    }
+//    private Cursor getEvents() {
+//        // Perform a managed query. The Activity will handle closing
+//        // and re-querying the cursor when needed.
+////        SQLiteDatabase db = events.getReadableDatabase();
+////        Cursor cursor = db.query(TABLE_NAME, FROM, null, null, null,
+////                null, ORDER_BY);
+////        startManagingCursor(cursor);
+////        return cursor;
+//        return managedQuery(CONTENT_URI, FROM, null,null, ORDER_BY);
+//    }
 
     //    private void showEvents(Cursor cursor){
 //        StringBuilder builder = new StringBuilder("Saved Events:\n");
@@ -79,12 +117,12 @@ public class MainActivity extends ListActivity {
 //        text.setText(builder);
 //
 //    }
-    private void showEvents(Cursor cursor) {
-        // Set up data binding
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                R.layout.item, cursor, FROM, TO);
-        setListAdapter(adapter);
-    }
+//    private void showEvents(Cursor cursor) {
+//        // Set up data binding
+//        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
+//                R.layout.item, cursor, FROM, TO);
+//        setListAdapter(adapter);
+//    }
 
 
 }
