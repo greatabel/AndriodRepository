@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">17Event with contentProvider</string>
+    <string name="empty">No events!</string>
+</resources>
