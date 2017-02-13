@@ -8,6 +8,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <provider
+            android:name="com.luminagic.wanchang.a16event.EventsProvider"
+            android:authorities="com.luminagic.wanchang.a16event"/>
+
         <activity android:name="com.luminagic.wanchang.a16event.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
