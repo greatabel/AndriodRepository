@@ -1,4 +1,4 @@
-package com.luminagic.wanchang.a15event;
+package com.luminagic.wanchang.a16event;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,13 +1,13 @@
-package com.luminagic.wanchang.a15event;
+package com.luminagic.wanchang.a16event;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import static android.provider.BaseColumns._ID;
-import static com.luminagic.wanchang.a15event.Constants.TABLE_NAME;
-import static com.luminagic.wanchang.a15event.Constants.TIME;
-import static com.luminagic.wanchang.a15event.Constants.TITLE;
+import static com.luminagic.wanchang.a16event.Constants.TABLE_NAME;
+import static com.luminagic.wanchang.a16event.Constants.TIME;
+import static com.luminagic.wanchang.a16event.Constants.TITLE;
 
 /**
  * Created by wanchang on 2017/2/13.
