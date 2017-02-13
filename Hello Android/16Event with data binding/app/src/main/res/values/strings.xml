@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">16Event with data binding</string>
+    <string name="empty">No events!</string>
 </resources>
