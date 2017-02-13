@@ -1,12 +1,12 @@
 package com.luminagic.wanchang.a15event;
 
+import android.app.ListActivity;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.TextView;
+import android.widget.SimpleCursorAdapter;
 
 import static android.provider.BaseColumns._ID;
 import static com.luminagic.wanchang.a15event.Constants.TABLE_NAME;
@@ -14,12 +14,14 @@ import static com.luminagic.wanchang.a15event.Constants.TIME;
 import static com.luminagic.wanchang.a15event.Constants.TITLE;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ListActivity {
 
     private  static String[] FROM = {_ID, TIME, TITLE,};
     private static String ORDER_BY = TIME + " DESC";
     private EventsData events;
 
+    private static int[] TO = { R.id.rowid, R.id.time, R.id.title, };
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,20 +61,26 @@ public class MainActivity extends AppCompatActivity {
         return cursor;
     }
 
-    private void showEvents(Cursor cursor){
-        StringBuilder builder = new StringBuilder("Saved Events:\n");
-        while(cursor.moveToNext()){
-            long id = cursor.getLong(0);
-            long time = cursor.getLong(1);
-            String title = cursor.getString(2);
-            builder.append(id).append(": ");
-            builder.append(time).append(": ");
-            builder.append(title).append("\n");
-
-        }
-        // Display on the screen
-        TextView text = (TextView) findViewById(R.id.text);
-        text.setText(builder);
-
+//    private void showEvents(Cursor cursor){
+//        StringBuilder builder = new StringBuilder("Saved Events:\n");
+//        while(cursor.moveToNext()){
+//            long id = cursor.getLong(0);
+//            long time = cursor.getLong(1);
+//            String title = cursor.getString(2);
+//            builder.append(id).append(": ");
+//            builder.append(time).append(": ");
+//            builder.append(title).append("\n");
+//
+//        }
+//        // Display on the screen
+//        TextView text = (TextView) findViewById(R.id.text);
+//        text.setText(builder);
+//
+//    }
+    private void showEvents(Cursor cursor) {
+    // Set up data binding
+    SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
+            R.layout.item, cursor, FROM, TO);
+    setListAdapter(adapter);
     }
 }
