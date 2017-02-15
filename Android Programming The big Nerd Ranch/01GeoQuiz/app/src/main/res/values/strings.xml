@@ -4,10 +4,10 @@
        <string name="question_text">
            Beijing is a capital city of China.
     </string>
-    <string name="true_button">True</string>
-    <string name="false_button">False</string>
-    <string name="correct_toast">Correct!</string>
-    <string name="incorrect_toast">Incorrect!</string>
+    <string name="true_button">True(真的)</string>
+    <string name="false_button">False(假的)</string>
+    <string name="correct_toast">Correct!@-@</string>
+    <string name="incorrect_toast">Incorrect!####</string>
     <string name="action_settings">Settings</string>
 
 </resources>

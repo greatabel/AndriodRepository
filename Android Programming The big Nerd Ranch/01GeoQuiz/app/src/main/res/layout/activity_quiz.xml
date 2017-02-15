@@ -22,13 +22,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/true_button"
-            android:text="True(真)"/>
+            android:text="@string/true_button"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/false_button"
-            android:text="False(假)"/>
+            android:text="@string/false_button"/>
     </LinearLayout>
 
 
