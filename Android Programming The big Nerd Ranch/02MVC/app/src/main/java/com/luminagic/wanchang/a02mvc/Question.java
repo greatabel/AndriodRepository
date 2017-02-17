@@ -1,5 +1,7 @@
 package com.luminagic.wanchang.a02mvc;
 
+import android.util.Log;
+
 public class Question {
     private  int mTextResId;
     private  boolean mAnswerTrue;
@@ -23,6 +25,7 @@ public class Question {
     public Question(int textResId, boolean answerTrue) {
         mTextResId = textResId;
         mAnswerTrue = answerTrue;
+        Log.d("mTextResId", Integer.toString(mTextResId));
     }
 }
 
