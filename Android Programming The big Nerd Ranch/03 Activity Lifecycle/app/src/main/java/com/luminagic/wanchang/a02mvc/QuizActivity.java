@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class QuizActivity extends AppCompatActivity {
 
     private static final String TAG = "QuizActivity";
-
+    private String splitLine = " <-@@@@@@@@@@@-> ";
 
     private Button mTrueButton;
     private Button mFalseButton;
@@ -61,7 +61,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.d(TAG,"onCreate(Bundle) called");
+        Log.d(TAG,splitLine + "onCreate(Bundle) called");
 
         setContentView(R.layout.activity_quiz);
 
@@ -111,4 +111,18 @@ public class QuizActivity extends AppCompatActivity {
         updateQuestion();
 
     }
+
+    // add more life cycle method to study
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d(TAG, splitLine+ "onStart() called");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(TAG, splitLine+"onPause() called");
+    }
+
 }
