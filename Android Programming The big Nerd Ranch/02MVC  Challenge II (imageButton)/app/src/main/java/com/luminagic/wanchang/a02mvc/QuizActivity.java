@@ -98,7 +98,7 @@ public class QuizActivity extends AppCompatActivity {
                     mCurrentIndex += mQuestionBank.length;
                 }
                 Log.d("mPrevButton", Integer.toString(mCurrentIndex));
-//                updateQuestion();
+                updateQuestion();
             }
         });
 

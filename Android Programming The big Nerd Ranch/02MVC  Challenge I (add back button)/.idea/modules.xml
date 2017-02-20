@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/02MVC  Challenge.iml" filepath="$PROJECT_DIR$/02MVC  Challenge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02MVC  Challenge I (add back button).iml" filepath="$PROJECT_DIR$/02MVC  Challenge I (add back button).iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

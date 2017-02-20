@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/arrow_left"
-
+            android:contentDescription="prev button"
             android:drawablePadding="4dp"/>
 
         <ImageButton
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/arrow_right"
-
+            android:contentDescription="next button"
             android:drawablePadding="4dp"/>
 
         </LinearLayout>
