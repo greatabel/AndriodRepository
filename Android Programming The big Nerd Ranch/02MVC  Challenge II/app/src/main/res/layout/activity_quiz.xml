@@ -41,23 +41,23 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+
+
+        <ImageButton
             android:id="@+id/prev_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prev"
-            android:drawableLeft="@drawable/arrow_left"
+            android:src="@drawable/arrow_left"
+
             android:drawablePadding="4dp"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next"
-            android:drawableRight="@drawable/arrow_right"
+            android:src="@drawable/arrow_right"
+
             android:drawablePadding="4dp"/>
-
-
 
         </LinearLayout>
 
