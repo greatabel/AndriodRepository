@@ -125,4 +125,20 @@ public class QuizActivity extends AppCompatActivity {
         Log.d(TAG, splitLine+"onPause() called");
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG, splitLine+"onResume() called");
+    }
+    @Override
+    public  void onStop(){
+        super.onStop();
+        Log.d(TAG, splitLine+"onStop() called");
+    }
+    @Override
+    public  void onDestroy(){
+        super.onDestroy();
+        Log.d(TAG,splitLine+"onDestroy() called");
+    }
+
 }
