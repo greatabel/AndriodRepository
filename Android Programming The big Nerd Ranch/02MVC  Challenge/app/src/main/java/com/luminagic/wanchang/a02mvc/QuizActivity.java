@@ -2,6 +2,7 @@ package com.luminagic.wanchang.a02mvc;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,6 +23,15 @@ public class QuizActivity extends AppCompatActivity {
             new Question(R.string.question_americas, true),
             new Question(R.string.question_asia, true)
     };
+
+    public void onClickTextView(View v) {
+    // add click event for textview(question)
+
+        mCurrentIndex = (mCurrentIndex + 1)% mQuestionBank.length;
+        Log.d("onClickTextView:", Integer.toString(mCurrentIndex));
+        updateQuestion();
+
+    }
 
     private void checkAnswer(boolean userPressedTrue) {
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
