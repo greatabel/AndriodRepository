@@ -17,5 +17,5 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="欢迎使用!"/>
 </RelativeLayout>
