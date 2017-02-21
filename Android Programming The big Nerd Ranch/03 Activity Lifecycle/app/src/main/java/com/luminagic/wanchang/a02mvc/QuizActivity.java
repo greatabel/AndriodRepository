@@ -59,6 +59,7 @@ public class QuizActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // only onCreate 's super.onCreate is important
         super.onCreate(savedInstanceState);
 
         Log.d(TAG,splitLine + "onCreate(Bundle) called");
