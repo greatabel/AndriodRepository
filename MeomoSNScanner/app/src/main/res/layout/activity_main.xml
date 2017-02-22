@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
                   android:layout_height="wrap_content" />
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/scan_button"
-        android:padding="24dp"
+        android:layout_marginRight="24dp"
         />
 
     <Button
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/export_button"
-        android:padding="24dp"
+
         />
     </LinearLayout>
 
