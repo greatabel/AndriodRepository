@@ -29,6 +29,9 @@ public class QuizActivity extends AppCompatActivity {
 
     private Button mCheatButton;
 
+    // 实验性质
+    private Button mExportButton;
+
     private ImageButton mNextButton;
     private ImageButton mPrevButton;
     private TextView mQuestionTextView;
@@ -124,6 +127,15 @@ public class QuizActivity extends AppCompatActivity {
                 Intent i = CheatActivity.newIntent(QuizActivity.this, answerIsTrue);
 //                startActivity(i);
                 startActivityForResult(i, REQUEST_CODE_CHEAT);
+            }
+        });
+
+        mExportButton = (Button)findViewById(R.id.export_button);
+        mExportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Log.d(TAG,"in mExportButton.setOnClickListener");
+
             }
         });
 

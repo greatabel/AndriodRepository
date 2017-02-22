@@ -21,6 +21,8 @@
     <string name="warning_text">你确定想这么做吗？</string>
     <string name="show_answer_button">显示答案</string>
     <string name="cheat_button">作弊！</string>
+
+    <string name="export_button">导出！</string>
     <string name="judgement_toast">作弊可耻！</string>
 
 </resources>
