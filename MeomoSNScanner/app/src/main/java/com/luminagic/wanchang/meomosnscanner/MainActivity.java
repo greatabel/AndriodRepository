@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, splitLine+"mScanButton");
+                Intent i = ScanningActivity.newIntent(MainActivity.this);
+                startActivity(i);
             }
         });
 

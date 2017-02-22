@@ -1,6 +1,8 @@
 package com.luminagic.wanchang.meomosnscanner;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,10 +20,17 @@ import java.util.concurrent.TimeUnit;
 
 public class ScanningActivity extends Activity {
     private static final String TAG = ScanningActivity.class.getSimpleName();
-
+    private static final String EXTRA_SN =
+            "com.luminagic.wanchang.meomosnscanner.sn";
     private TextView mStatusText;
     private SurfaceView mPreview;
     private ZXingFacade mZXingFacade;
+
+    /* abel add */
+    public static Intent newIntent(Context packageContext) {
+        Intent i = new Intent(packageContext, ScanningActivity.class);
+        return i;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
