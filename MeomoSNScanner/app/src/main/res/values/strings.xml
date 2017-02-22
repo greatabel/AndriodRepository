@@ -4,4 +4,8 @@
     <string name="action_scan">扫描</string>
     <string name="title_activity_scanning">ScanningActivity</string>
     <string name="hello_world">Hello world!</string>
+
+    <string name="export_button">导出！</string>
+    <string name="scan_button">扫描</string>
+
 </resources>
