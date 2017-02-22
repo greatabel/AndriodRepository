@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.ArrayList;
+
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -78,6 +80,30 @@ public class QuizActivity extends AppCompatActivity {
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         mQuestionTextView.setText(question);
     }
+//
+//    public static FileWriter generateCsvFile(File sFileName,String fileContent) {
+//        FileWriter writer = null;
+//
+//        try {
+//            writer = new FileWriter(sFileName);
+//            writer.append(fileContent);
+//            writer.flush();
+//
+//        } catch (IOException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }finally
+//        {
+//            try {
+//                writer.close();
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//        return writer;
+//    }
+
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -134,10 +160,40 @@ public class QuizActivity extends AppCompatActivity {
         mExportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Log.d(TAG,"in mExportButton.setOnClickListener");
+                Log.d(TAG,"in mExportButton.setOnClickListener");
+                String contentToSend = android.text.TextUtils.join(",", list);
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, contentToSend);
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent, "file_send"));
+
+
+
+//                Date dateVal = new Date();
+//
+//                String filename = dateVal.toString();
+//
+//                File data = null;
+//                try {
+//                    data = File.createTempFile("Report", ".txt");
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+
+//                FileWriter out = (FileWriter) generateCsvFile(
+//                                        data, "Name,Data1");
+//                Uri csv  =  Uri.fromFile(data);
+//                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+//                sharingIntent.setType("text/plain");
+//                sharingIntent.setData(csv);
+//                startActivity(Intent.createChooser(sharingIntent, "test"));
+
 
             }
         });
+
+
 
         mNextButton = (ImageButton)findViewById(R.id.next_button);
         mNextButton.setOnClickListener(new View.OnClickListener(){
@@ -215,6 +271,10 @@ public class QuizActivity extends AppCompatActivity {
             }
             mIsCheater = CheatActivity.wasAnswerShown(data);
             list.add(mCurrentIndex+" # "+mIsCheater);
+            for(int i=0;i<50;i++){
+                list.add("M0BGDB150049011LNUZWISQBe7db"+i);
+            }
+
             for (String str : list) {
 
                 Log.d(TAG,"Item is: " + str);
