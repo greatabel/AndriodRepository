@@ -10,8 +10,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.ArrayList;
 
 public class QuizActivity extends AppCompatActivity {
+
+    // https://examples.javacodegeeks.com/core-java/util/arraylist/arraylist-in-java-example-how-to-use-arraylist/
+    ArrayList<String> list = new ArrayList<String>();
 
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
@@ -198,6 +202,13 @@ public class QuizActivity extends AppCompatActivity {
                 return;
             }
             mIsCheater = CheatActivity.wasAnswerShown(data);
+            list.add(mCurrentIndex+" # "+mIsCheater);
+            for (String str : list) {
+
+                Log.d(TAG,"Item is: " + str);
+
+            }
+
 //            Log.d(TAG, "3 onActivityResult mIsCheater: "+ Boolean.toString(mIsCheater));
         }
     }
