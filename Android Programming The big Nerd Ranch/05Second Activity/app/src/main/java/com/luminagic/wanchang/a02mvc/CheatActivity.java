@@ -1,5 +1,6 @@
 package com.luminagic.wanchang.a02mvc;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -50,9 +51,15 @@ public class CheatActivity extends AppCompatActivity {
 
     }
 
-    private void setAnswerShownResult(boolean isAnswerShown){
+    public static boolean wasAnswerShown(Intent result) {
+        return result.getBooleanExtra(EXTRA_ANSWER_SHOWN, false);
+    }
+
+    private void setAnswerShownResult(boolean isAnswerShown) {
         Intent data = new Intent();
         data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
-        setResult(RESULT_OK, data);
+        setResult(Activity.RESULT_OK, data);
     }
+
+
 }

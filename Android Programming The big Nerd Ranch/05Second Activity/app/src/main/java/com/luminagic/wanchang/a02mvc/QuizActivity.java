@@ -1,5 +1,6 @@
 package com.luminagic.wanchang.a02mvc;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -53,11 +54,18 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             messageResId = R.string.incorrect_toast;
         }
+
+        if(mIsCheater){
+            messageResId = R.string.judgement_toast;
+        }
+
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
                 .show();
     }
 
     private  int mCurrentIndex = 0;
+
+    private boolean mIsCheater ;
 
     private  void updateQuestion() {
         int question = mQuestionBank[mCurrentIndex].getTextResId();
@@ -120,6 +128,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 mCurrentIndex = (mCurrentIndex + 1)% mQuestionBank.length;
+                mIsCheater = false;
                 updateQuestion();
             }
         });
@@ -173,4 +182,23 @@ public class QuizActivity extends AppCompatActivity {
         Log.d(TAG,splitLine+"onDestroy() called");
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d(TAG, "1 onActivityResult's requestCode: "+ Integer.toString(resultCode));
+
+        if(resultCode != Activity.RESULT_OK) {
+            return ;
+        }
+        Log.d(TAG, "2 onActivityResult data: "+ data);
+        if(requestCode == REQUEST_CODE_CHEAT){
+            if(data == null){
+                Log.d(TAG, "2.1 onActivityResult data: "+ data+"requestCode:"+
+                        Integer.toString(requestCode));
+                return;
+            }
+            mIsCheater = CheatActivity.wasAnswerShown(data);
+            Log.d(TAG, "3 onActivityResult mIsCheater: "+ Boolean.toString(mIsCheater));
+        }
+    }
 }
