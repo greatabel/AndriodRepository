@@ -10,26 +10,33 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/show_text_view"
+            android:text="@string/hello_world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-                  android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/scan_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scan_button"
+            android:layout_marginRight="24dp"
+            />
 
-    <Button
-        android:id="@+id/scan_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/scan_button"
-        android:layout_marginRight="24dp"
-        />
-
-    <Button
-        android:id="@+id/export_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/export_button"
-
-        />
+        <Button
+            android:id="@+id/export_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/export_button"
+            />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

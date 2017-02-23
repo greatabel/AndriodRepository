@@ -20,17 +20,33 @@ import java.util.concurrent.TimeUnit;
 
 public class ScanningActivity extends Activity {
     private static final String TAG = ScanningActivity.class.getSimpleName();
-    private static final String EXTRA_SN =
-            "com.luminagic.wanchang.meomosnscanner.sn";
+
     private TextView mStatusText;
     private SurfaceView mPreview;
     private ZXingFacade mZXingFacade;
 
+
     /* abel add */
+    private static final String EXTRA_ABEL_SN =
+            "com.luminagic.wanchang.meomosnscanner.sn";
+
     public static Intent newIntent(Context packageContext) {
         Intent i = new Intent(packageContext, ScanningActivity.class);
         return i;
     }
+
+    public static String getSnResult(Intent result) {
+        return result.getStringExtra(EXTRA_ABEL_SN);
+    }
+
+    private void setSnResult(String SN) {
+        Intent data = new Intent();
+        data.putExtra(EXTRA_ABEL_SN, SN);
+        setResult(Activity.RESULT_OK, data);
+    }
+
+    /* end abel add */
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +84,7 @@ public class ScanningActivity extends Activity {
         public void handleDecode(Result result, Bitmap barcode, float scaleFactor) {
             Log.d(TAG, "Decoded: " + result.getText());
             mStatusText.setText(result.getText());
+            setSnResult(result.getText());
             mZXingFacade.restartPreviewAfterDelay(TimeUnit.SECONDS.toMillis(1));
         }
 

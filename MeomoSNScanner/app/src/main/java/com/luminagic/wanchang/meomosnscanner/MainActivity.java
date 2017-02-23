@@ -1,6 +1,7 @@
 package com.luminagic.wanchang.meomosnscanner;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -12,6 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,19 +24,56 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_CAMERA_PERMISSION = 128;
     private String splitLine = " <-@@@@@@@@@@@-> ";
 
+    /* abel add */
+    private TextView mShowTextView;
     private Button mExportButton;
     private Button mScanButton;
+    private static final int REQUEST_CODE_SN = 0;
+    private String mSN ;
+    ArrayList<String> snlist = new ArrayList<String>();
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode != Activity.RESULT_OK) {
+            return ;
+        }
+        if(requestCode == REQUEST_CODE_SN){
+            if(data == null){
+                return;
+            }
+
+            mSN = ScanningActivity.getSnResult(data);
+
+            String SN=mSN.replaceFirst(".*/(\\w+)*","$1");
+            Log.d(TAG,"str="+SN);
+
+            snlist.add(SN);
+            mShowTextView.setText("入库个数：" + snlist.size()+
+                    " 最后一个："+snlist.get(snlist.size()-1));
+
+        }
+
+    }
+    /* end of abel add */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mShowTextView = (TextView)findViewById(R.id.show_text_view);
+
         mExportButton = (Button)findViewById(R.id.export_button);
         mExportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, splitLine+"mExportButton");
+                String contentToSend = android.text.TextUtils.join("\n", snlist);
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, contentToSend);
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent, "file_send"));
             }
         });
         mScanButton = (Button)findViewById(R.id.scan_button);
@@ -41,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(TAG, splitLine+"mScanButton");
                 Intent i = ScanningActivity.newIntent(MainActivity.this);
-                startActivity(i);
+                startActivityForResult(i, REQUEST_CODE_SN);
             }
         });
 
