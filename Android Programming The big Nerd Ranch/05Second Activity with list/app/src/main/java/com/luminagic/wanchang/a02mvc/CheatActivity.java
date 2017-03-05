@@ -61,5 +61,4 @@ public class CheatActivity extends AppCompatActivity {
         setResult(Activity.RESULT_OK, data);
     }
 
-
 }
