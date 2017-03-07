@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">06SDK_VERSIONS</string>
+
+       <string name="question_text">
+           Beijing is a capital city of China.
+    </string>
+
+    <string name="question_oceans">The Pacific Ocean is larger than the Atlantic Ocean.</string>
+    <string name="question_mideast">The Suez Canal connects the Red Sea and the Indian Ocean.</string>
+    <string name="question_africa">The source of the Nile River is in Egypt.</string>
+    <string name="question_americas">The Amazon River is the longest river in the Americas.</string>
+    <string name="question_asia">Lake Baikal is the world\'s oldest and deepest freshwater lake.</string>
+
+
+    <string name="true_button">True(真的)</string>
+    <string name="false_button">False(假的)</string>
+    <string name="correct_toast">Correct!@-@</string>
+    <string name="incorrect_toast">Incorrect!####</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="warning_text">你确定想这么做吗？</string>
+    <string name="show_answer_button">显示答案</string>
+    <string name="cheat_button">作弊！</string>
+
+    <string name="export_button">导出！</string>
+    <string name="judgement_toast">作弊可耻！</string>
+
+</resources>
