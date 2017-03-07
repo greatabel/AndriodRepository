@@ -2,9 +2,6 @@ package com.example.wanchang.a07criminalintent;
 
 import java.util.UUID;
 
-/**
- * Created by wanchang on 2017/3/7.
- */
 
 public class Crime {
     private UUID mId;

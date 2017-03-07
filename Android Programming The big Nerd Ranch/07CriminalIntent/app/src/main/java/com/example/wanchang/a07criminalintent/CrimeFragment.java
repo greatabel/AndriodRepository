@@ -9,10 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-/**
- * Created by wanchang on 2017/3/7.
- */
-
 public class CrimeFragment extends Fragment {
     private Crime mCrime;
 
