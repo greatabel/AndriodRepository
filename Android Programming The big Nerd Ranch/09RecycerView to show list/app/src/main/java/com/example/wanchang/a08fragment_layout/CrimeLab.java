@@ -36,7 +36,7 @@ public class CrimeLab {
 
     private CrimeLab(Context context) {
         mCrimes = new ArrayList<>();
-        for(int i=0; i< 10;i++){
+        for(int i=0; i< 20;i++){
             Crime crime = new Crime();
             crime.setmTitle("Crime #" + i);
             crime.setmSolved(i % 2 == 0);
