@@ -51,6 +51,7 @@ public class CrimeListFragment extends Fragment {
 
         public CrimeHolder(View itemView){
             super(itemView);
+
 //            mTitleView = (TextView)itemView;
 
             mTitleView = (TextView)
