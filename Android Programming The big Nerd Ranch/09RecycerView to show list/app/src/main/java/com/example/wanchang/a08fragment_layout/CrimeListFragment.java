@@ -15,7 +15,18 @@ import java.util.List;
 
 
 public class CrimeListFragment extends Fragment {
+    /*
 
+    http://stackoverflow.com/questions/35728179/recyclerview-items-with-big-empty-space-after-23-2-0
+    修改 list_item_crime.xml
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_content">
+    的layout_height 为 wrap_content
+
+     */
+    
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
 
