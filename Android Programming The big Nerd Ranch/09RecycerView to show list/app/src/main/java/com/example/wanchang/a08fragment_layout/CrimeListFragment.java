@@ -31,6 +31,9 @@ public class CrimeListFragment extends Fragment {
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
 
+    CrimeLab crimeLab = CrimeLab.get(getActivity());
+    List<Crime> crimes = crimeLab.getmCrimes();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
@@ -41,15 +44,17 @@ public class CrimeListFragment extends Fragment {
 
         updateUI();
 
+
         return view;
     }
 
     private void updateUI() {
-        CrimeLab crimeLab = CrimeLab.get(getActivity());
-        List<Crime> crimes = crimeLab.getmCrimes();
+//        CrimeLab crimeLab = CrimeLab.get(getActivity());
+//        List<Crime> crimes = crimeLab.getmCrimes();
 
         mAdapter = new CrimeAdapter(crimes);
         mCrimeRecyclerView.setAdapter(mAdapter);
+
     }
 
     private class CrimeHolder extends RecyclerView.ViewHolder
@@ -82,6 +87,16 @@ public class CrimeListFragment extends Fragment {
                     mCrime.getmTitle() + " is being clicked!",
                     Toast.LENGTH_SHORT)
                     .show();
+            //start --------------自己测试加的代码：
+
+            int position = this.getAdapterPosition();
+            crimeLab.test_change(position);
+            Log.d("show mCrime:", mCrime.getmId().toString()+
+            " # "+ position);
+            // show recyclerview 's advantage
+            // http://www.cnblogs.com/tiantianbyconan/p/4232560.html
+            mCrimeRecyclerView.getAdapter().notifyItemChanged(position);
+            //end --------------自己测试加的代码：
         }
 
         public  void bindCrime(Crime crime){

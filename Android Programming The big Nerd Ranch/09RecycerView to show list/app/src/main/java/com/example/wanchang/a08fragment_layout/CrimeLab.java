@@ -13,6 +13,16 @@ public class CrimeLab {
     public List<Crime> getmCrimes() {
         return mCrimes;
     }
+    // just to test
+    public void test_change(int position){
+        if (position < mCrimes.size()) {
+            mCrimes.get(position).setmTitle("test " + position);
+        }
+//        for(int i=0; i< 20;i++) {
+//
+//            mCrimes.get(i).setmTitle("test " + i);
+//        }
+    }
 
     public Crime getCrime(UUID id){
         for(Crime crime: mCrimes){
