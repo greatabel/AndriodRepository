@@ -10,13 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 
 public class CrimeListFragment extends Fragment {
     /*
-
+    item 之间很大空隙问题
     http://stackoverflow.com/questions/35728179/recyclerview-items-with-big-empty-space-after-23-2-0
     修改 list_item_crime.xml
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,7 +27,7 @@ public class CrimeListFragment extends Fragment {
     的layout_height 为 wrap_content
 
      */
-    
+
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
 
@@ -51,7 +52,8 @@ public class CrimeListFragment extends Fragment {
         mCrimeRecyclerView.setAdapter(mAdapter);
     }
 
-    private class CrimeHolder extends RecyclerView.ViewHolder {
+    private class CrimeHolder extends RecyclerView.ViewHolder
+        implements View.OnClickListener{
 
         private  Crime mCrime;
 
@@ -62,7 +64,7 @@ public class CrimeListFragment extends Fragment {
 
         public CrimeHolder(View itemView){
             super(itemView);
-
+            itemView.setOnClickListener(this);
 //            mTitleView = (TextView)itemView;
 
             mTitleView = (TextView)
@@ -72,6 +74,14 @@ public class CrimeListFragment extends Fragment {
             mSolvedCheckbox = (CheckBox)
                     itemView.findViewById(R.id.list_item_crime_solved_check_box);
 
+        }
+
+        @Override
+        public void onClick(View v){
+            Toast.makeText(getActivity(),
+                    mCrime.getmTitle() + " is being clicked!",
+                    Toast.LENGTH_SHORT)
+                    .show();
         }
 
         public  void bindCrime(Crime crime){
