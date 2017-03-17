@@ -1,4 +1,4 @@
-package com.example.wanchang.a08fragment_layout;
+package com.example.wanchang.a10fragment_argument;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.wanchang.a08fragment_layout.R;
 
 import java.util.List;
 

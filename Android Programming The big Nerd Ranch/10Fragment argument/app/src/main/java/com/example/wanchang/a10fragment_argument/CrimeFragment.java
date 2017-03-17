@@ -1,4 +1,4 @@
-package com.example.wanchang.a08fragment_layout;
+package com.example.wanchang.a10fragment_argument;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
+import com.example.wanchang.a08fragment_layout.R;
 
 
 public class CrimeFragment extends Fragment {
