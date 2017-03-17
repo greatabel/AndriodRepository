@@ -1,5 +1,6 @@
 package com.example.wanchang.a10fragment_argument;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -85,20 +86,22 @@ public class CrimeListFragment extends Fragment {
 
         @Override
         public void onClick(View v){
-            Toast.makeText(getActivity(),
-                    mCrime.getmTitle() + " is being clicked!",
-                    Toast.LENGTH_SHORT)
-                    .show();
-            //start --------------自己测试加的代码：
-
-            int position = this.getAdapterPosition();
-            crimeLab.test_change(position);
-            Log.d("show mCrime:", mCrime.getmId().toString()+
-            " # "+ position);
-            // show recyclerview 's advantage
-            // http://www.cnblogs.com/tiantianbyconan/p/4232560.html
-            mCrimeRecyclerView.getAdapter().notifyItemChanged(position);
-            //end --------------自己测试加的代码：
+//            Toast.makeText(getActivity(),
+//                    mCrime.getmTitle() + " is being clicked!",
+//                    Toast.LENGTH_SHORT)
+//                    .show();
+//            //start --------------自己测试加的代码：
+//
+//            int position = this.getAdapterPosition();
+//            crimeLab.test_change(position);
+//            Log.d("show mCrime:", mCrime.getmId().toString()+
+//            " # "+ position);
+//            // show recyclerview 's advantage
+//            // http://www.cnblogs.com/tiantianbyconan/p/4232560.html
+//            mCrimeRecyclerView.getAdapter().notifyItemChanged(position);
+//            //end --------------自己测试加的代码：
+            Intent intent = new Intent(getActivity(), CrimeActivity.class);
+            startActivity(intent);
         }
 
         public  void bindCrime(Crime crime){
