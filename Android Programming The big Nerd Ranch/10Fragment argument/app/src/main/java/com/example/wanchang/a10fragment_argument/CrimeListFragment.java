@@ -37,6 +37,9 @@ public class CrimeListFragment extends Fragment {
     CrimeLab crimeLab = CrimeLab.get(getActivity());
     List<Crime> crimes = crimeLab.getmCrimes();
 
+    // exercise 1
+    int click_index = -1;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
@@ -64,14 +67,19 @@ public class CrimeListFragment extends Fragment {
 
 //        mAdapter = new CrimeAdapter(crimes);
 //        mCrimeRecyclerView.setAdapter(mAdapter);
+
         CrimeLab crimeLab = CrimeLab.get(getActivity());
         List<Crime> crimes = crimeLab.getmCrimes();
 
         if(mAdapter == null){
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
+            Log.d("updateUI","mAdapter == null");
         } else {
-            mAdapter.notifyDataSetChanged();
+//            mAdapter.notifyDataSetChanged();
+            //excercise 1
+            mAdapter.notifyItemChanged(click_index);
+            Log.d("updateUI","mAdapter != null");
         }
 
     }
@@ -116,7 +124,7 @@ public class CrimeListFragment extends Fragment {
 //            // http://www.cnblogs.com/tiantianbyconan/p/4232560.html
 //            mCrimeRecyclerView.getAdapter().notifyItemChanged(position);
 //            //end --------------自己测试加的代码：
-
+            click_index = this.getAdapterPosition();
             Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getmId());
             startActivity(intent);
         }
