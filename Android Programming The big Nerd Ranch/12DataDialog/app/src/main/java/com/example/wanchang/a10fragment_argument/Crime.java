@@ -1,6 +1,7 @@
 package com.example.wanchang.a10fragment_argument;
 
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
@@ -47,5 +48,11 @@ public class Crime {
     public Crime() {
         mId = UUID.randomUUID();
         mDate = new Date();
+        // 变成3天前
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(mDate);
+        cal.add(Calendar.DATE, -3);
+        Date dateBefore30Days = cal.getTime();
+        mDate = dateBefore30Days;
     }
 }

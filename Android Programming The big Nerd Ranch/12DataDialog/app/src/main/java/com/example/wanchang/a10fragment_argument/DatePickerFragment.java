@@ -13,6 +13,7 @@ import android.widget.DatePicker;
 
 import com.example.wanchang.a08fragment_layout.R;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class DatePickerFragment extends DialogFragment{
@@ -36,8 +37,23 @@ public class DatePickerFragment extends DialogFragment{
         Date date = (Date)getArguments().getSerializable(ARG_DATE);
         Log.d("date->",date.toString());
 
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        Log.d("year month day->", Integer.toString(year)+"#"
+        +Integer.toString(month)+"#"
+        +Integer.toString(day));
+
+
         View v = LayoutInflater.from(getActivity())
                 .inflate(R.layout.dialog_date, null);
+
+
+        mDatePicker = (DatePicker)v.findViewById(R.id.dialog_date_date_picker);
+        mDatePicker.init(year, month, day, null);
 
         return new android.support.v7.app.AlertDialog.Builder(getActivity())
                 .setView(v)
