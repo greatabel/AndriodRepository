@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">12DataDialog</string>
+    <string name="crime_title_hint">请输入标题</string>
+    <string name="crime_title_label">标题</string>
+    <string name="crime_detail_label">具体内容</string>
+    <string name="crime_solved_label">已解决</string>
+</resources>
