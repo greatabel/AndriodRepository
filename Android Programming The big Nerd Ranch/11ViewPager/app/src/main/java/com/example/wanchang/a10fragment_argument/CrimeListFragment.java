@@ -125,7 +125,8 @@ public class CrimeListFragment extends Fragment {
 //            mCrimeRecyclerView.getAdapter().notifyItemChanged(position);
 //            //end --------------自己测试加的代码：
             click_index = this.getAdapterPosition();
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getmId());
+//            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getmId());
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getmId());
             startActivity(intent);
         }
 
