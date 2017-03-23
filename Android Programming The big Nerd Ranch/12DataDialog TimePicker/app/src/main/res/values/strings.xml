@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">12DataDialog TimePicker</string>
+    <string name="app_name">12TimePicker_DataDialog </string>
     <string name="crime_title_hint">请输入标题</string>
     <string name="crime_title_label">标题</string>
     <string name="crime_detail_label">具体内容</string>

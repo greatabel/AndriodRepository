@@ -37,6 +37,9 @@ public class CrimeFragment extends Fragment {
 
     private EditText mTitleField;
     private Button mDateButton;
+
+    private Button mTimeButton;
+
     private CheckBox mSolvedCheckBox;
 
     public  static CrimeFragment newInstance(UUID crimeId) {
@@ -87,9 +90,11 @@ public class CrimeFragment extends Fragment {
         });
 
         mDateButton = (Button)v.findViewById(R.id.crime_date);
-        String dateAndroid = android.text.format.DateFormat.format(
-                "yyyy-dd-MM hh:mm:ss", mCrime.getmDate()).toString();
-        mDateButton.setText(dateAndroid);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateFormat = formatter.format(mCrime.getmDate());
+//        String dateAndroid = android.text.format.DateFormat.format(
+//                "yyyy-dd-MM", mCrime.getmDate()).toString();
+        mDateButton.setText(dateFormat);
         updateDate();
 //        mDateButton.setEnabled(false);
         mDateButton.setOnClickListener(new View.OnClickListener(){
@@ -104,6 +109,13 @@ public class CrimeFragment extends Fragment {
             }
 
         });
+
+        // http://stackoverflow.com/questions/6842245/converting-date-time-to-24-hour-format
+
+        mTimeButton = (Button)v.findViewById(R.id.crime_time);
+        String timeAndroid = android.text.format.DateFormat.format(
+                "kk:mm:ss", mCrime.getmDate()).toString();
+        mTimeButton.setText(timeAndroid);
 
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.ismSolved());
@@ -131,9 +143,9 @@ public class CrimeFragment extends Fragment {
     }
 
     private void updateDate() {
-        SimpleDateFormat sdf1 = new SimpleDateFormat();
-        sdf1.applyPattern("yyyy/MM/dd HH:mm:ss.SS");
-        String Dtstring=sdf1.format(mCrime.getmDate());
-        mDateButton.setText(Dtstring);
+        // http://stackoverflow.com/questions/14039062/how-to-convert-date-in-to-yyyy-mm-dd-format
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateFormat = formatter.format(mCrime.getmDate());
+        mDateButton.setText(dateFormat);
     }
 }
