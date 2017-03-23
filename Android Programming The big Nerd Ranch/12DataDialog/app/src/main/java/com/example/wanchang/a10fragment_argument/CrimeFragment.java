@@ -18,6 +18,7 @@ import android.widget.EditText;
 
 import com.example.wanchang.a08fragment_layout.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
@@ -130,6 +131,9 @@ public class CrimeFragment extends Fragment {
     }
 
     private void updateDate() {
-        mDateButton.setText(mCrime.getmDate().toString());
+        SimpleDateFormat sdf1 = new SimpleDateFormat();
+        sdf1.applyPattern("yyyy/MM/dd HH:mm:ss.SS");
+        String Dtstring=sdf1.format(mCrime.getmDate());
+        mDateButton.setText(Dtstring);
     }
 }
