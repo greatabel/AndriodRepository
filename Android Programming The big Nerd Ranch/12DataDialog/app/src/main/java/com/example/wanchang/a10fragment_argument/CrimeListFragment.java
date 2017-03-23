@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.wanchang.a08fragment_layout.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -133,7 +135,13 @@ public class CrimeListFragment extends Fragment {
         public  void bindCrime(Crime crime){
             mCrime = crime;
             mTitleView.setText(mCrime.getmTitle());
-            mDateTExtView.setText((mCrime.getmDate().toString()));
+
+            SimpleDateFormat sdf1 = new SimpleDateFormat();
+            sdf1.applyPattern("yyyy/MM/dd HH:mm:ss.SS");
+            String Dtstring=sdf1.format(mCrime.getmDate());
+
+            mDateTExtView.setText(Dtstring);
+//            mDateTExtView.setText((mCrime.getmDate().toString()));
             mSolvedCheckbox.setChecked(mCrime.ismSolved());
         }
     }
