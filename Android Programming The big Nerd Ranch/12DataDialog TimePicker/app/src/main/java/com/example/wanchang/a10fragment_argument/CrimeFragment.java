@@ -29,6 +29,8 @@ public class CrimeFragment extends Fragment {
 
     private static final String DIALOG_DATE = "DialogDate";
 
+    private static final String DIALOG_TIME = "DialogTime";
+
     private static final int REQUEST_DATE = 0;
 
     private Crime mCrime;
@@ -116,6 +118,14 @@ public class CrimeFragment extends Fragment {
         String timeAndroid = android.text.format.DateFormat.format(
                 "kk:mm:ss", mCrime.getmDate()).toString();
         mTimeButton.setText(timeAndroid);
+        mTimeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = getFragmentManager();
+                TimePickerFragment dialog = new TimePickerFragment();
+                dialog.show(manager, DIALOG_TIME);
+            }
+        });
 
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.ismSolved());
