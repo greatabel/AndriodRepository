@@ -1,5 +1,7 @@
 package com.example.wanchang.a10fragment_argument;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +18,7 @@ import android.widget.EditText;
 
 import com.example.wanchang.a08fragment_layout.R;
 
+import java.util.Date;
 import java.util.UUID;
 
 
@@ -86,6 +89,7 @@ public class CrimeFragment extends Fragment {
         String dateAndroid = android.text.format.DateFormat.format(
                 "yyyy-dd-MM hh:mm:ss", mCrime.getmDate()).toString();
         mDateButton.setText(dateAndroid);
+        updateDate();
 //        mDateButton.setEnabled(false);
         mDateButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -110,5 +114,22 @@ public class CrimeFragment extends Fragment {
         });
         return v;
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(resultCode != Activity.RESULT_OK) {
+            return ;
+        }
+        if(requestCode == REQUEST_DATE) {
+            Date date = (Date)data
+                    .getSerializableExtra(DatePickerFragment.EXTRA_DATE);
+            mCrime.setmDate(date);
+            updateDate();
+        }
+    }
+
+    private void updateDate() {
+        mDateButton.setText(mCrime.getmDate().toString());
     }
 }
