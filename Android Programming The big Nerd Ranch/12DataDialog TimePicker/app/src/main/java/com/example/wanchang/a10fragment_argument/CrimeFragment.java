@@ -33,6 +33,8 @@ public class CrimeFragment extends Fragment {
 
     private static final int REQUEST_DATE = 0;
 
+    private static final  int REQUEST_TIME = 1;
+
     private Crime mCrime;
 
 
@@ -97,7 +99,7 @@ public class CrimeFragment extends Fragment {
 //        String dateAndroid = android.text.format.DateFormat.format(
 //                "yyyy-dd-MM", mCrime.getmDate()).toString();
         mDateButton.setText(dateFormat);
-        updateDate();
+
 //        mDateButton.setEnabled(false);
         mDateButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -125,9 +127,13 @@ public class CrimeFragment extends Fragment {
 //                TimePickerFragment dialog = new TimePickerFragment();
                 TimePickerFragment dialog =  TimePickerFragment
                         .newInstance(mCrime.getmDate());
+
+                dialog.setTargetFragment(CrimeFragment.this, REQUEST_TIME);
+
                 dialog.show(manager, DIALOG_TIME);
             }
         });
+        updateDate();
 
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.ismSolved());
@@ -143,6 +149,7 @@ public class CrimeFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
+        Log.d("onActivityResult->", Integer.toString(requestCode));
         if(resultCode != Activity.RESULT_OK) {
             return ;
         }
@@ -152,6 +159,13 @@ public class CrimeFragment extends Fragment {
             mCrime.setmDate(date);
             updateDate();
         }
+        if(requestCode == REQUEST_TIME) {
+            Date part_date = (Date)data
+                    .getSerializableExtra(TimePickerFragment.EXTRA_TIME);
+            Log.d("onActivityResult->", part_date.toString());
+            mCrime.setmDate_Hour_Minute_Part(part_date);
+            updateDate();
+        }
     }
 
     private void updateDate() {
@@ -159,5 +173,9 @@ public class CrimeFragment extends Fragment {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String dateFormat = formatter.format(mCrime.getmDate());
         mDateButton.setText(dateFormat);
+
+        String timeAndroid = android.text.format.DateFormat.format(
+                "kk:mm:ss", mCrime.getmDate()).toString();
+        mTimeButton.setText(timeAndroid);
     }
 }
