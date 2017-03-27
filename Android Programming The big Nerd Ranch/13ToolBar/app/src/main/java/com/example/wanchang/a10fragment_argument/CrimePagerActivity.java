@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.wanchang.a08fragment_layout.R;
 
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.UUID;
 
 
-public class CrimePagerActivity extends FragmentActivity {
+public class CrimePagerActivity extends AppCompatActivity {
 
     private static final String EXTRA_CRIME_ID =
             "com.example.wanchang.a10fragment_argument.crime_id";
