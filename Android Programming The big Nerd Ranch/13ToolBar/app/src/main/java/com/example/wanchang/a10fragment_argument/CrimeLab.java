@@ -46,12 +46,16 @@ public class CrimeLab {
 
     private CrimeLab(Context context) {
         mCrimes = new ArrayList<>();
-        for(int i=0; i< 30;i++){
-            Crime crime = new Crime();
-            crime.setmTitle("缺点 #" + i);
-            crime.setmSolved(i % 2 == 0);
-            mCrimes.add(crime);
-        }
+//        for(int i=0; i< 30;i++){
+//            Crime crime = new Crime();
+//            crime.setmTitle("缺点 #" + i);
+//            crime.setmSolved(i % 2 == 0);
+//            mCrimes.add(crime);
+//        }
+    }
+
+    public void addCrime(Crime c){
+        mCrimes.add(c);
     }
 
 
