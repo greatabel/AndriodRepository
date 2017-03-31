@@ -13,6 +13,17 @@ public class Crime {
     private UUID mId;
     private  String mTitle;
     private Date mDate;
+    private  boolean mSolved;
+
+    private  String mSuspect;
+
+    public String getmSuspect() {
+        return mSuspect;
+    }
+
+    public void setmSuspect(String mSuspect) {
+        this.mSuspect = mSuspect;
+    }
 
     public boolean ismSolved() {
         return mSolved;
@@ -22,7 +33,7 @@ public class Crime {
         this.mSolved = mSolved;
     }
 
-    private  boolean mSolved;
+
 
     public Date getmDate() {
         return mDate;
