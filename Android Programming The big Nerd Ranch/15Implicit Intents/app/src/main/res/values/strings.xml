@@ -14,5 +14,13 @@
     <string name="suttitle_format">%1$s 缺点</string>
     <string name="crime_suspect_text">选择 嫌疑人</string>
     <string name="crime_report_text">发送缺点报告</string>
+    <string name="crime_report">%1$s! 缺点被发现 %2$s. %3$s, and %4$s</string>
+
+    <string name="crime_report_solved">The case is solved</string>
+    <string name="crime_report_unsolved">The case is not solved</string>
+    <string name="crime_report_no_suspect">there is no suspect.</string>
+    <string name="crime_report_suspect">the suspect is %s.</string>
+    <string name="crime_report_subject">CriminalIntent Crime Report</string>
+    <string name="send_report">Send crime report via</string>
 
 </resources>
