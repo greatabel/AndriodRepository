@@ -2,6 +2,7 @@ package com.example.wanchang.a10fragment_argument;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -34,6 +35,8 @@ public class CrimeFragment extends Fragment {
 
     private static final int REQUEST_DATE = 0;
 
+    private static final int REQUEST_CONTACT = 1;
+
     private static final  int REQUEST_TIME = 1;
 
     private Crime mCrime;
@@ -46,6 +49,9 @@ public class CrimeFragment extends Fragment {
     private Button mTimeButton;
 
     private CheckBox mSolvedCheckBox;
+
+    private Button mSuspectButton;
+
 
     private Button mReportButton;
 
@@ -76,6 +82,7 @@ public class CrimeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_crime, container, false);
+
 
         mTitleField = (EditText)v.findViewById(R.id.crime_title);
         mTitleField.setText(mCrime.getmTitle());
@@ -159,6 +166,19 @@ public class CrimeFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+        final Intent pickContact = new Intent(Intent.ACTION_PICK,
+                ContactsContract.Contacts.CONTENT_URI);
+        mSuspectButton = (Button)v.findViewById(R.id.crime_suspect);
+        mSuspectButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivityForResult(pickContact, REQUEST_CONTACT);
+            }
+        });
+        if(mCrime.getmSuspect() != null){
+            mSuspectButton.setText(mCrime.getmSuspect());
+        }
+
         return v;
 
     }
