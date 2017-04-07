@@ -2,6 +2,8 @@ package com.example.wanchang.a10fragment_argument;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -35,10 +37,11 @@ public class CrimeFragment extends Fragment {
 
     private static final int REQUEST_DATE = 0;
 
-    private static final int REQUEST_CONTACT = 1;
+
 
     private static final  int REQUEST_TIME = 1;
 
+    private static final int REQUEST_CONTACT = 2;
     private Crime mCrime;
 
 
@@ -201,6 +204,25 @@ public class CrimeFragment extends Fragment {
             Log.d("onActivityResult->", part_date.toString());
             mCrime.setmDate_Hour_Minute_Part(part_date);
             updateDate();
+        }
+        if ( requestCode == REQUEST_CONTACT && data != null){
+            Uri contactUri = data.getData();
+            String[] queryFields = new String[] {
+                    ContactsContract.Contacts.DISPLAY_NAME
+            };
+            Cursor c = getActivity().getContentResolver()
+                    .query(contactUri, queryFields, null, null, null);
+            try {
+                if (c.getCount() == 0) {
+                    return;
+                }
+                c.moveToFirst();
+                String suspect = c.getString(0);
+                mCrime.setmSuspect(suspect);
+                mSuspectButton.setText(suspect);
+            } finally {
+                c.close();;
+            }
         }
     }
 
