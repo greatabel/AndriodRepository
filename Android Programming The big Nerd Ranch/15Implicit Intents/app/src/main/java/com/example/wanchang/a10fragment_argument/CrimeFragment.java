@@ -2,6 +2,7 @@ package com.example.wanchang.a10fragment_argument;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
@@ -180,6 +181,13 @@ public class CrimeFragment extends Fragment {
         });
         if(mCrime.getmSuspect() != null){
             mSuspectButton.setText(mCrime.getmSuspect());
+        }
+
+        // 防止崩溃，检查是否存在联系人应用
+        PackageManager packageManager = getActivity().getPackageManager();
+        if(packageManager.resolveActivity(pickContact,
+                PackageManager.MATCH_DEFAULT_ONLY) == null ){
+            mSuspectButton.setEnabled(false);
         }
 
         return v;
