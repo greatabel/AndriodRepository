@@ -25,6 +25,10 @@ public class Crime {
         this.mSuspect = mSuspect;
     }
 
+    public String getPhotoFilename() {
+        return "IMG_" + getmId().toString() + ".jpg";
+    }
+
     public boolean ismSolved() {
         return mSolved;
     }
