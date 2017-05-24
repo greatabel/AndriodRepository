@@ -239,11 +239,11 @@ public class CrimeFragment extends Fragment {
         mPhotoView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your code here
-                Log.d("", "click picture");
+//                Log.d("", "click picture");
                 FragmentManager manager = getFragmentManager();
 //                DatePickerFragment dialog = new DatePickerFragment();
                 BigPictureFragment dialog = BigPictureFragment
-                        .newInstance(1);
+                        .newInstance(mPhotoFile.getPath());
                 dialog.setTargetFragment(CrimeFragment.this, REQUEST_BIGPicture);
                 dialog.show(manager, DIALOG_BIGPicture);
             }
