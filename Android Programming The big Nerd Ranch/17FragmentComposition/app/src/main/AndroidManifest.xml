@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wanchang.a08fragment_layout">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+    </uses-permission>
+
+    <user-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.wanchang.a10fragment_argument.CrimePagerActivity"
+            android:parentActivityName="com.example.wanchang.a10fragment_argument.CrimeListActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="com.example.wanchang.a10fragment_argument.CrimeListActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>
