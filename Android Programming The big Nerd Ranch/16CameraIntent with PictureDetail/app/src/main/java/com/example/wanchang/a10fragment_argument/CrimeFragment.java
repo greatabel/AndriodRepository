@@ -230,6 +230,15 @@ public class CrimeFragment extends Fragment {
         });
 
         mPhotoView = (ImageView)v.findViewById(R.id.crime_photo);
+
+        // 练习1：
+        mPhotoView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // your code here
+                Log.d("", "click picture");
+            }
+        });
+
         updatePhotoView();
         return v;
 
