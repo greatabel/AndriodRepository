@@ -41,6 +41,8 @@ public class CrimeFragment extends Fragment {
 
     private static final String DIALOG_TIME = "DialogTime";
 
+    private static final String DIALOG_BIGPicture = "DialogBigPicture";
+
     private static final int REQUEST_DATE = 0;
 
 
@@ -50,6 +52,8 @@ public class CrimeFragment extends Fragment {
     private static final int REQUEST_CONTACT = 2;
 
     private static final int REQUEST_PHOTO = 3;
+
+    private static final int REQUEST_BIGPicture = 4;
 
     private Crime mCrime;
 
@@ -236,6 +240,12 @@ public class CrimeFragment extends Fragment {
             public void onClick(View v) {
                 // your code here
                 Log.d("", "click picture");
+                FragmentManager manager = getFragmentManager();
+//                DatePickerFragment dialog = new DatePickerFragment();
+                BigPictureFragment dialog = BigPictureFragment
+                        .newInstance(1);
+                dialog.setTargetFragment(CrimeFragment.this, REQUEST_BIGPicture);
+                dialog.show(manager, DIALOG_BIGPicture);
             }
         });
 
