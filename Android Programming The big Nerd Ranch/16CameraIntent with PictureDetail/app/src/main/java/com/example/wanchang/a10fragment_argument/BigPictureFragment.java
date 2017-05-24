@@ -31,7 +31,7 @@ public class BigPictureFragment  extends DialogFragment {
 
         return new android.support.v7.app.AlertDialog.Builder(getActivity())
                 .setView(v)
-                .setTitle(R.string.date_picker_title)
+                .setTitle(R.string.bigpicture_title)
                 .create();
     }
 
