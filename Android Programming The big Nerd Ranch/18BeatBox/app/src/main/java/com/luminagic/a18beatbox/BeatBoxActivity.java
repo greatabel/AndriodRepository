@@ -1,13 +1,13 @@
 package com.luminagic.a18beatbox;
 
+import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class BeatBoxActivity extends AppCompatActivity {
+public class BeatBoxActivity extends SingleFragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beat_box);
+    protected Fragment createFragment() {
+        return BeatBoxFragment.newInstance();
     }
 }
