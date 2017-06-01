@@ -12,11 +12,19 @@ import android.widget.Button;
 
 public class BeatBoxFragment extends Fragment {
 
+    private BeatBox mBeatBox;
+
     public static BeatBoxFragment newInstance() {
         return new BeatBoxFragment();
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mBeatBox = new BeatBox(getActivity());
+    }
+
+        @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_beat_box, container, false);
