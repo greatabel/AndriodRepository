@@ -8,6 +8,19 @@ public class Sound {
     private String mAssetPath;
     private String mName;
 
+    // ch19
+    private Integer mSoundId;
+
+    public Integer getmSoundId() {
+        return mSoundId;
+    }
+
+    public void setmSoundId(Integer mSoundId) {
+        this.mSoundId = mSoundId;
+    }
+
+
+
     public Sound(String assetPath){
         mAssetPath = assetPath;
         String[] components = assetPath.split("/");
