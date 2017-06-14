@@ -24,6 +24,10 @@ public class BeatBoxFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //确保Beatbox实例一直存在
+        setRetainInstance(true);
+
         mBeatBox = new BeatBox(getActivity());
     }
 
