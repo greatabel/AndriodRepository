@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--han games-->
+<html>
+<head>
+<title>视琦 -【算术高手】</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/ex.css" rel = "stylesheet" type="text/css">
+</head>
+<style>
+/*/*#icon_1{position: absolute;top: 1px;left: 1%;z-index: 995;}*/
+#icon_1{left: 90px;background-image: url(../../static/img/version5/buttons/help-text.png);z-index: 998;}
+#icon_2{left:10px;background-image: url(../../static/img/version5/buttons/replay-text.png);z-index: 999;}  
+#icon_1,#icon_2{position: absolute;width: 75px;height: 75px;top: 0px;cursor: pointer;display:block;}
+#icon_2:hover{
+    background-image: url(../../static/img/version5/buttons/replay.png);
+}
+#icon_1:hover{
+    background-image: url(../../static/img/version5/buttons/help.png);
+}
+#sucImg,#failImg{position: absolute;top: 30%;left: 44%;z-index: 999;display: none;}
+#timer{position: absolute;top: 1px;right:1%;z-index: 995;font-size: 3rem;}
+@media (min-width: 1020px) and (max-width: 1300px) {
+    #sucImg,#failImg{position: absolute;top: 28%;left: 36%;}
+}
+@media (min-width: 1301px) and (max-width: 1600px) {
+    #sucImg,#failImg{position: absolute;top: 26%;left: 40%;}
+}
+@media (min-width: 1601px ) and (max-width: 1920px){
+#sucImg,#failImg{position: absolute;top: 30%;left: 43%;}
+}
+@media (min-width: 767px) and (max-width: 991px) {
+     #sucImg,#failImg{position: absolute;top: 35%;left: 36%;}
+}
+/*canvas{background: green;}*/
+</style>
+<body>
+<div id="loading"><span><img src="image/loading.gif"></span></div>
+
+ <div id="instructions" style="display: none;">
+       <div class="select" >
+            <div class="content">
+                <div class="indent">
+                    请患者在5分钟之内用最快的速度判断等式的结果，是1，还是2，或是3呢？找对加10分，错误减10分，时间到后跳转结算成绩页面，看看你能得多少分。
+                </div>
+                 <div class="start"></div>
+            </div>
+        </div>
+    </div>
+
+ <div id="instruction_1" style="display: none;">
+       <div class="select" >
+            <div class="content">
+                <div class="indent">
+                    
+                </div>
+                 <div class="start_1"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sucImg"><img src="image/success.png" style="width:300px;height: 300px;"></div>
+    <div id="failImg"><img src="image/fail.png" style="width:300px;height: 300px;"></div>
+    <div id="icon_1"></div>
+   <a href="index.html"> <div id="icon_2"> </div></a>
+<center>
+    <canvas id="game-canvas" width="1280" height="720"></canvas>
+</center>
+   <canvas id="bg-canvas" width="1024" height="768" style="margin:auto; position: absolute; z-index:-10;width: 100vw;height:100vh;top:0px;left:0px;"></canvas>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/create.js"></script>
+<script src="js/common.js"></script>
+<script src="js/stbg.js"></script>
+<script src="js/babyEye.js"></script>
+<script src="js/gameDataSheets.js"></script><!--第一关-->
+
+<script>
+//你真棒
+window.handleResize = function () {
+    if (window.innerWidth < window.innerHeight * 1024 / 768) {
+        $("#game-canvas").css({
+            "height": "auto",
+            "width": "99vw"
+        });
+    } else {
+        $("#game-canvas").css({
+            "height": "99vh",
+            "width": "auto"
+        });
+    };
+};
+window.addEventListener('resize', handleResize, false);
+window.handleResize();
+
+$(document).ready(function(){
+    window.init();
+})
+$("#icon_1").click(function(){
+    $("#game-canvas").hide();
+    $("#instructions").show();
+    $("#icon_1").hide();
+    $("#icon_2").hide();
+    $('#timer').hide();
+  })
+  $(".start").click(function(){
+      $("#instructions").hide();
+     $("#game-canvas").show();
+    $("#icon_1").show();
+    $("#icon_2").show();
+    $('#timer').show();
+  })
+</script>
+</html>

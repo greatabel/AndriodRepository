@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="newScene" previous="" next="" version="2.2">
+  <item type="instance" UID="4598"/>
+  <item type="instance" UID="4547"/>
+  <item type="instance" UID="4550">
+    <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+  </item>
+  <item type="variable" variableName="j" variableType="number" initValue="0"/>
+  <item type="variable" variableName="n" variableType="number" initValue="0"/>
+  <item type="variable" variableName="create" variableType="number" initValue="0"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="yes">
+      <item valueDataType="string" value="yes" name="key"/>
+      <item valueDataType="number" value="399.41" name="x"/>
+      <item valueDataType="number" value="316.42" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="bounceInOut" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="startTimer" target="childYes" behaviorName="计时器">
+      <item valueDataType="number" value="1000" name="1"/>
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="string" value="childTime" name="3"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="play" target="niuBi">
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="number" value="1" name="3"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="TimerOnTimerCompleteEvent" callName="onTimerComplete" isTrigger="true" target="childYes" behaviorName="计时器">
+      <item valueDataType="string" value="childTime" name="tag"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22FirstScene%22" name="18"/>
+    </item>
+  </item>
+</eventSheets>

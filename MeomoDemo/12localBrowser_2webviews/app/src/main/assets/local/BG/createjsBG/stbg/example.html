@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #bg-canvas {
+        margin:auto;
+        position:absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom: 0;
+        z-index: -100;
+        display:block;
+        width:100vw;
+        height:100vh;
+        max-width:100vw;
+        max-height:100vh;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas" width="1280" height="720"></canvas>
+
+    <script src="../../../static/js/jquery.min.js"></script>
+    <script src="../../../static/js/create.js"></script>
+    <script src="../../../static/js/common.js"></script>
+    <script src="stbg.js"></script>
+    <script>
+        $(window).ready(function(){
+            var config = {
+                barWidth: 30,//条删宽度 5－50
+                deltaTime: 400,//闪烁间隔 > 50
+                showTimes: 8,//闪烁次数 >=4
+            }
+
+            if(window.stbg) stbg.removeSelf();
+            window.stbg = new STBG(config);
+
+            //需要有id为bg-canvas的canvas元素，width,height自定义。
+
+            //注意！在产生新背景之前，一定要验证上一次产生的背景是否存在，如果存在先删除上一个；
+            //下面的两行代码，为产生新背景的代码
+            //if(window.stbg) window.stbg.removeSelf();删除背景;
+            //window.stbg = new STBG(config);产生背景
+
+            //window.stbg.pause();暂停背景
+            //window.stbg.restart();重新开始背景
+            //window.stbg.stop();停止背景，不能再重新开始
+            //window.stbg.setBarWidth(number);重新设置条删宽度5-50
+        })
+    </script>
+</body>
+</html>

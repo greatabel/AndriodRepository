@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="SecondScene" previous="" next="" version="2.2">
+  <item type="instance" UID="4583"/>
+  <item type="instance" UID="4565"/>
+  <item type="instance" UID="4498">
+    <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+    <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+      <item valueDataType="number" value="0.3" name="onTime"/>
+      <item valueDataType="number" value="0.3" name="offTime"/>
+      <item valueDataType="number" value="0" name="times"/>
+      <item valueDataType="number" value="1" name="enabled"/>
+    </item>
+  </item>
+  <item type="instance" UID="4492">
+    <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+    <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+      <item valueDataType="number" value="0.3" name="onTime"/>
+      <item valueDataType="number" value="0.3" name="offTime"/>
+      <item valueDataType="number" value="0" name="times"/>
+      <item valueDataType="number" value="1" name="enabled"/>
+    </item>
+  </item>
+  <item type="instance" UID="4486">
+    <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+      <item valueDataType="number" value="0.3" name="onTime"/>
+      <item valueDataType="number" value="0.3" name="offTime"/>
+      <item valueDataType="number" value="0" name="times"/>
+      <item valueDataType="number" value="1" name="enabled"/>
+    </item>
+    <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+  </item>
+  <item type="instance" UID="4480">
+    <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+    <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+      <item valueDataType="number" value="0.3" name="onTime"/>
+      <item valueDataType="number" value="0.3" name="offTime"/>
+      <item valueDataType="number" value="0" name="times"/>
+      <item valueDataType="number" value="1" name="enabled"/>
+    </item>
+  </item>
+  <item type="instance" UID="4451">
+    <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+      <item valueDataType="number" value="0.3" name="onTime"/>
+      <item valueDataType="number" value="0.3" name="offTime"/>
+      <item valueDataType="number" value="0" name="times"/>
+      <item valueDataType="number" value="1" name="enabled"/>
+    </item>
+    <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+  </item>
+  <item type="instance" UID="3824"/>
+  <item type="instance" UID="4440">
+    <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+  </item>
+  <item type="variable" variableName="j" variableType="number" initValue="0"/>
+  <item type="variable" variableName="n" variableType="number" initValue="0"/>
+  <item type="variable" variableName="create" variableType="number" initValue="0"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="create" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="disableS" name="23" isFamily="false"/>
+      <item valueDataType="number" value="1" name="22"/>
+      <item valueDataType="number" value="60%2BMath.random()*630" name="21"/>
+      <item valueDataType="number" value="60%2BMath.random()*450" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="startTimer" target="SECbG" behaviorName="计时器">
+      <item valueDataType="number" value="1000" name="1"/>
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="string" value="setTimes" name="3"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="disableS"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22ThirdScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="TimerOnTimerCompleteEvent" callName="onTimerComplete" isTrigger="true" target="SECbG" behaviorName="计时器">
+      <item valueDataType="string" value="setTimes" name="tag"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22ThirdScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="SECbG"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22FirstScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="create" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="1" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="disableS"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="sumA">
+      <item valueDataType="string" value="System.create" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="disabls">
+      <item valueDataType="number" value="120%2BMath.random()*460" name="16"/>
+      <item valueDataType="number" value="120%2BMath.random()*360" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="startTimer" target="SECbG" behaviorName="计时器">
+      <item valueDataType="number" value="1000" name="1"/>
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="string" value="setDisabls" name="3"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="create" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="2" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="disabls"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="sumA">
+      <item valueDataType="string" value="System.create" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="disabs">
+      <item valueDataType="number" value="0.8" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="disabs">
+      <item valueDataType="number" value="120%2BMath.random()*560" name="16"/>
+      <item valueDataType="number" value="120%2BMath.random()*360" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="startTimer" target="SECbG" behaviorName="计时器">
+      <item valueDataType="number" value="1000" name="1"/>
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="string" value="setDisabs" name="3"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="create" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="3" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="disabs"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="sumA">
+      <item valueDataType="string" value="System.create" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="disas">
+      <item valueDataType="number" value="0.7" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="disas">
+      <item valueDataType="number" value="120%2BMath.random()*560" name="16"/>
+      <item valueDataType="number" value="120%2BMath.random()*360" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="startTimer" target="SECbG" behaviorName="计时器">
+      <item valueDataType="number" value="1000" name="1"/>
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="string" value="setDisas" name="3"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="create" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="4" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="disas"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="sumA">
+      <item valueDataType="string" value="System.create" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="disass">
+      <item valueDataType="number" value="0.6" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="disass">
+      <item valueDataType="number" value="120%2BMath.random()*560" name="16"/>
+      <item valueDataType="number" value="120%2BMath.random()*360" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="startTimer" target="SECbG" behaviorName="计时器">
+      <item valueDataType="number" value="1000" name="1"/>
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="string" value="setDisass" name="3"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="create" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="5" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="sumA">
+      <item valueDataType="string" value="System.create" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="disableS">
+      <item valueDataType="number" value="0.5" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="disableS">
+      <item valueDataType="number" value="120%2BMath.random()*560" name="16"/>
+      <item valueDataType="number" value="120%2BMath.random()*360" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="startTimer" target="SECbG" behaviorName="计时器">
+      <item valueDataType="number" value="1000" name="1"/>
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="string" value="setdi" name="3"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="TimerOnTimerCompleteEvent" callName="onTimerComplete" isTrigger="true" target="SECbG" behaviorName="计时器">
+      <item valueDataType="string" value="setDisabls" name="tag"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22ThirdScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="disabls"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="System">
+      <item valueDataType="string" value="create" name="12" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="sumA">
+      <item valueDataType="string" value="System.create" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22ThirdScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="TimerOnTimerCompleteEvent" callName="onTimerComplete" isTrigger="true" target="SECbG" behaviorName="计时器">
+      <item valueDataType="string" value="setDisabs" name="tag"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22ThirdScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="disabs"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="System">
+      <item valueDataType="string" value="create" name="12" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="sumA">
+      <item valueDataType="string" value="System.create" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22ThirdScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="TimerOnTimerCompleteEvent" callName="onTimerComplete" isTrigger="true" target="SECbG" behaviorName="计时器">
+      <item valueDataType="string" value="setDisas" name="tag"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22ThirdScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="disas"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="System">
+      <item valueDataType="string" value="create" name="12" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="sumA">
+      <item valueDataType="string" value="System.create" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22newScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="TimerOnTimerCompleteEvent" callName="onTimerComplete" isTrigger="true" target="SECbG" behaviorName="计时器">
+      <item valueDataType="string" value="setDisass" name="tag"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22ThirdScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="disass"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="System">
+      <item valueDataType="string" value="create" name="12" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="sumA">
+      <item valueDataType="string" value="System.create" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22newScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="TimerOnTimerCompleteEvent" callName="onTimerComplete" isTrigger="true" target="SECbG" behaviorName="计时器">
+      <item valueDataType="string" value="setdi" name="tag"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22ThirdScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="sayOk1"/>
+    <item type="action" persistent="false" callTarget="instance" callName="reload" target="Browser"/>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="saleSec"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22TextScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="IsBetweenValuesEvent" callName="isBetweenValues" isTrigger="false" target="System">
+      <item valueDataType="number" value="System.create" name="value"/>
+      <item valueDataType="number" value="4" name="lowerValue"/>
+      <item valueDataType="number" value="10" name="highValue"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="disableS">
+      <item valueDataType="number" value="0.4" name="16"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="IsBetweenValuesEvent" callName="isBetweenValues" isTrigger="false" target="System">
+      <item valueDataType="number" value="System.create" name="value"/>
+      <item valueDataType="number" value="9" name="lowerValue"/>
+      <item valueDataType="number" value="20" name="highValue"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="disableS">
+      <item valueDataType="number" value="0.3" name="16"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="IsBetweenValuesEvent" callName="isBetweenValues" isTrigger="false" target="System">
+      <item valueDataType="number" value="System.create" name="value"/>
+      <item valueDataType="number" value="19" name="lowerValue"/>
+      <item valueDataType="number" value="31" name="highValue"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="disableS">
+      <item valueDataType="number" value="0.2" name="16"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="IsBetweenValuesEvent" callName="isBetweenValues" isTrigger="false" target="System">
+      <item valueDataType="number" value="System.create" name="value"/>
+      <item valueDataType="number" value="30" name="lowerValue"/>
+      <item valueDataType="number" value="500" name="highValue"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="disableS">
+      <item valueDataType="number" value="0.1" name="16"/>
+    </item>
+  </item>
+</eventSheets>

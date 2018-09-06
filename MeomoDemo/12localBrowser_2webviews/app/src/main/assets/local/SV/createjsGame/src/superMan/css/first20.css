@@ -1,0 +1,271 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #FF86FF;
+    /*cursor: pointer;*/   
+}
+#instructions {
+    color: white;
+}
+/* 第一版 挑选眼睛 开始 */
+.select{
+    width:1280px;
+    height: 720px;
+    background-image: url(../../../../../static/img/version5/background/selectGlassesBG.png);
+    margin: 0 auto;
+    overflow: hidden;
+    display: block;
+}
+.select .content{
+    width: 560px;
+    margin: 0 auto;
+
+    margin-top: 220px;
+    font-size: 25px;
+    font-family: 黑体;
+    color: #000;
+}
+.glass-instruct{
+    text-indent: 50px;
+}
+.redBlueBtn {
+    background-image: url(../../../../../static/img/version5/buttons/redBlue.png); 
+}
+.blueRedBtn {
+    background-image: url(../../../../../static/img/version5/buttons/blueRed.png);
+    background-position: top center;
+}
+.redBlueBtn,.blueRedBtn{
+    background-repeat: no-repeat;
+     width:230px;
+    height: 60px;
+    background-size: 100%;
+    margin: auto;
+    opacity:1;
+    cursor: pointer;
+}
+/*.redBlueBtn:hover,.blueRedBtn:hover{
+    opacity:1;
+}*/
+.redBlue {
+    background-repeat: no-repeat;
+    background-image: url(../../../../../static/img/interface/redBlueGlass.png);
+    background-position: top center;
+    width:150px;
+    height: 100px;
+    background-size: 100%;
+    margin: auto;
+}
+.blueRed {
+    background-repeat: no-repeat;
+    background-image: url(../../../../../static/img/interface/blueRedGlass.png);
+    background-position: top center;
+    width:150px;
+    height: 100px;
+    background-size: 100%;
+    margin: auto;
+}
+.redleft{
+    float: left;
+    margin-left: -70px;
+}
+.blueright{
+    float: right;
+    margin-right: -30px;
+}
+/* 第二版游戏说明 开始 */
+#instruction1 .center{
+    width: 550px;
+  }
+.content2{
+  width: 550px;
+  margin: 250px auto 0px;
+ 
+}
+ #instruction1{
+    display:block;
+    font-size: 24px;
+    color: white;
+    text-indent: 50px;
+    font-family: 黑体;
+    width: 1280px;
+    height: 720px ;  
+    margin: 0 auto;
+    background-image: url(../../../../../static/img/version5/background/instructionBG.png);
+    overflow: hidden;
+    position: relative;
+}
+.start,.config {
+    float: right;
+    background-repeat: no-repeat;
+    background-image: url(../../../../../static/img/version5/buttons/start-text.png);
+    width:75px; 
+    height: 75px;
+    background-size: 100%;
+    /*margin-top: 30px;*/
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 999;
+    cursor: pointer;
+}
+.start:hover,.config:hover {
+    background-image: url(../../../../../static/img/version5/buttons/start.png);
+}
+.start:active ,.config:active{
+    width: 75px;
+}
+.config{display: none;}
+/* 第二版游戏说明 结束 */
+
+/* 第三版游戏游玩 开始 */
+#success, #fail{
+    display: none;
+}
+#success img{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 120px;
+    left: 52%;
+    margin-left: -150px;
+}
+#fail img{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 120px;
+    left: 52%;
+    margin-left: -150px;
+}
+#loading {
+    margin: 0px;
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height:100%;
+    color: black;
+    background: #ff00ff;
+}
+
+#loading span {
+    position: absolute;
+    top: 300px;
+}
+ body {
+      background-color:#ff00ff;      
+}
+#playing {
+    display: none;
+    width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+#count{
+    color: black;
+    height: 20px;
+    font-size: 25px;
+    position: absolute; 
+    font-family: 黑体; 
+    bottom: 3%;
+    right:5%;   
+}
+.say{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 0px;
+    cursor: pointer;
+    left: 90px;
+    background-image: url(../../../../../static/img/version5/buttons/help-text.png);
+}
+.reset{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 0px;
+    left:10px;
+    cursor: pointer;
+    background-image: url(../../../../../static/img/version5/buttons/replay-text.png);
+}
+.reset:hover{
+    background-image: url(../../../../../static/img/version5/buttons/replay.png);
+}
+.say:hover{
+    background-image: url(../../../../../static/img/version5/buttons/help.png);
+}
+/* 第三版游戏游玩结束 */
+
+
+.select-lazy-eye{
+    width: 1024px;
+    margin: 0 auto;
+    height: 768px;
+    background-image: url(../../../../../static/img/interface/statement0.png); 
+}
+
+.centent10{
+    width: 550px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.xuanze{
+    width: 200px;
+    margin: 0 auto;
+    font-family:黑体 ;
+    color: white;
+    font-size: 25px;
+    margin-top: 220px;
+}
+.eyeleft{
+    float: left;
+     font-family:黑体 ;
+    color: white;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 20%;
+    border: 1px white solid;
+    width: 65px;
+    height: 30px;
+}
+.eyeleft span{
+     text-align: center;
+    line-height: 30px; 
+    font-family:黑体 ;
+    color: white;
+    font-size: 25px;
+    padding-left: 6px;
+}
+.eyeright{
+    width: 65px;
+    height: 30px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20%;
+    border: 1px white solid;
+}
+.eyeright span{
+    text-align: center;
+    line-height: 30px; 
+    font-family:黑体;
+    color: white;
+    font-size: 25px;
+    padding-left: 6px;
+}
+.shanshuo{
+  width: 80px;
+  height: 80px;
+  border: 1px white solid;
+  position: absolute;
+  top: 40%; 
+  border-radius: 40px;
+}
+.shanshuo_text{
+    width: 70px;
+    color: white;
+    font-family: 黑体;
+   margin-left: 10%;
+    margin-top: 20%;
+}
+       

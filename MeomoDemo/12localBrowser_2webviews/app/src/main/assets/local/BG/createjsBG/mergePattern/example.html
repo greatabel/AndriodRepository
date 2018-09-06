@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #bg-canvas {
+        margin:auto;
+        position:absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom: 0;
+        z-index: -100;
+        display:block;
+        width:100vw;
+        height:100vh;
+        max-width:100vw;
+        max-height:100vh;
+    }
+
+    body {
+        background: #ff00ff;
+    }
+    #img-canvas{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas" width="1280" height="720"></canvas>
+    <canvas id="img-canvas"></canvas>
+    <script src="../../../static/js/jquery.min.js"></script>
+    <script src="../../../static/js/create.js"></script>
+    <script src="../../../static/js/common.js"></script>
+    <script src="../../../static/js/babyEye/babyEye.js"></script>
+    <script src="MergePattern-es6.js"></script>
+    <script>
+        $(window).ready(function(){
+            let queue = new createjs.LoadQueue();
+            queue.addEventListener("complete",()=>{
+                let images = [queue.getResult("target")];
+                window.bg = new MergePatternBG(images);
+            })
+
+            queue.loadManifest(
+                [{id: "target",src: "./fly-small.png"}]
+            )
+
+        })
+    </script>
+</body>
+</html>

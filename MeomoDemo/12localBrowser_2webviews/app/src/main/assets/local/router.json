@@ -1,0 +1,237 @@
+{
+  "name": "视琦视觉训练",
+  "version": "1.0.0",
+  "gamelist": [
+    {
+      "gid": 178,
+      "fullname": "追随-布袋熊",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/20170718211230890574.jpg",
+      "path": "https://game.babyeye.com/program/old-bird/ST/differentGirl/",
+      "iconloacl": "icon/20170718211230890574.jpg",
+      "pathloacl": "ST/differentGirl/index.html",
+      "type": "视觉刺激"
+    },
+    {
+      "gid": 289,
+      "fullname": "找不同_找国旗",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20170727135848274612.png",
+      "path": "https://game.babyeye.com/program/old-bird/EX/findBanner/index.html",
+      "iconloacl": "icon/20170727135848274612.png",
+      "pathloacl": "EX/findBanner/index.html",
+      "type": "视觉精细"
+    },
+    {
+      "gid": 302,
+      "fullname": "算数高手",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20170727140008666592.png",
+      "path": "https://game.babyeye.com/program/old-bird/EX/mathMaster/",
+      "iconloacl": "icon/20170727140008666592.png",
+      "pathloacl": "EX/mathMaster/index.html",
+      "type": "视觉精细"
+    },
+    {
+      "gid": 299,
+      "fullname": "疯狂猜拳",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20170727140217603880.png",
+      "path": "https://game.babyeye.com/dist/Country/ex845/index.html",
+      "iconloacl": "icon/20170727140217603880.png",
+      "pathloacl": "dist/Country/ex845/index.html",
+      "type": "视觉精细"
+    },
+    {
+      "gid": 356,
+      "fullname": "聪头排数字（低龄）",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201712/20171229003618847707.png",
+      "path": "https://game.babyeye.com/dist/Space/ex760/index.html",
+      "iconloacl": "icon/20171229003618847707.png",
+      "pathloacl": "dist/Space/ex760/index.html",
+      "type": "视觉精细"
+    },
+    {
+      "gid": 357,
+      "fullname": "聪头排数字（高龄）",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201712/20171229004547730720.png",
+      "path": "https://game.babyeye.com/dist/Space/ex760-older/index.html",
+      "iconloacl": "icon/20171229004547730720.png",
+      "pathloacl": "dist/Space/ex760-older/index.html",
+      "type": "视觉精细"
+    },
+    {
+      "gid": 118,
+      "fullname": "聚焦_找不同",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20170718142802091337.jpg",
+      "path": "https://game.babyeye.com/dist/Space/ex841/index.html",
+      "iconloacl": "icon/20170718142802091337.jpg",
+      "pathloacl": "dist/Space/ex841/index.html",
+      "type": "视觉精细"
+    },
+    {
+      "gid": 322,
+      "fullname": "极速乌龟",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201709/20170901110445541932.png",
+      "path": "https://game.babyeye.com/program/old-bird/AN/createjsGame/html2/an-turtle-run.html",
+      "iconloacl": "icon/20170901110445541932.png",
+      "pathloacl": "AN/createjsGame/html2/an-turtle-run.html",
+      "type": "脱抑制"
+    },
+    {
+      "gid": 346,
+      "fullname": "滑雪",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201712/20171201165419224993.jpg",
+      "path": "https://game.babyeye.com/program/old-bird/AN/createjsGame/html2/an-ski.html",
+      "iconloacl": "icon/20171201165419224993.jpg",
+      "pathloacl": "AN/createjsGame/html2/an-ski.html",
+      "type": "脱抑制"
+    },
+    {
+      "gid": 197,
+      "fullname": "注视-快乐厨娘",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20170718121401191379.jpg",
+      "path": "https://game.babyeye.com/program/old-bird/h5/happyCooker/index.html",
+      "iconloacl": "icon/20170718121401191379.jpg",
+      "pathloacl": "AN/happyCooker/index.html",
+      "type": "脱抑制"
+    },
+    {
+      "gid": 348,
+      "fullname": "小小建筑师",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201712/20171217231129004833.png",
+      "path": "https://game.babyeye.com/dist/Space/an715/index.html",
+      "iconloacl": "icon/20171217231129004833.png",
+      "pathloacl": "dist/Space/an715/index.html",
+      "type": "脱抑制"
+    },
+    {
+      "gid": 345,
+      "fullname": "快乐除虫",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20171201162248205695.png",
+      "path": "https://game.babyeye.com/program/old-bird/AN/catch-the-worm/index.html",
+      "iconloacl": "icon/20171201162248205695.png",
+      "pathloacl": "AN/catch-the-worm/index.html",
+      "type": "脱抑制"
+    },
+    {
+      "gid": 320,
+      "fullname": "兔子舞",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201708/20170825211726610600.jpg",
+      "path": "https://game.babyeye.com/dist/Country/st111-281/index.html",
+      "iconloacl": "icon/20170825211726610600.jpg",
+      "pathloacl": "dist/Country/st111-281/index.html",
+      "type": "视觉刺激"
+    },
+    {
+      "gid": 287,
+      "fullname": "手脑眼_打地鼠",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20170727135906217199.png",
+      "path": "https://game.babyeye.com/dist/Country/ex152-186/index.html",
+      "iconloacl": "icon/20170727135906217199.png",
+      "pathloacl": "dist/Country/ex152-186/index.html",
+      "type": "视觉精细"
+    },
+    {
+      "gid": 336,
+      "fullname": "消灭轮船",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201801/20171110170348811129.png",
+      "path": "https://game.babyeye.com/program/old-bird/FU/html2/fu-boat-combat.html",
+      "iconloacl": "icon/20171110170348811129.png",
+      "pathloacl": "FU/html2/fu-boat-combat.html",
+      "type": "融合视"
+    },
+
+    {
+      "gid": 361,
+      "fullname": "捉鱼",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201801/20180102100710448024.png",
+      "path": "https://game.babyeye.com/program/old-bird/FU/html2/fu-catch-fish.html",
+      "iconloacl": "icon/20180102100710448024.png",
+      "pathloacl": "FU/html2/fu-catch-fish.html",
+      "type": "融合视"
+    },
+    {
+      "gid": 307,
+      "fullname": "加速飞车",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201708/20170804173302319454.png",
+      "path": "https://game.babyeye.com/program/old-bird/SV/createjsGame/html/sv-race.html",
+      "iconloacl": "icon/20170804173302319454.png",
+      "pathloacl": "SV/createjsGame/html/sv-race.html",
+      "type": "同时视"
+    },
+    {
+      "gid": 341,
+      "fullname": "接苹果",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201711/20171110175616588653.png",
+      "path": "https://game.babyeye.com/program/old-bird/SV/createjsGame/html2/sv-catch-apple.html",
+      "iconloacl": "icon/20171110175616588653.png",
+      "pathloacl": "SV/createjsGame/html2/sv-catch-apple.html",
+      "type": "同时视"
+    },
+    {
+      "gid": 310,
+      "fullname": "动物城大冒险",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201708/20170811231229323227.png",
+      "path": "https://game.babyeye.com/program/old-bird/SV/createjsGame/html/superMan.html",
+      "iconloacl": "icon/20170811231229323227.png",
+      "pathloacl": "SV/createjsGame/html/superMan.html",
+      "type": "同时视"
+    },
+    {
+      "gid": 183,
+      "fullname": "交叉_十字相交_光栅",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20170718224648495366.jpg",
+      "path": "https://game.babyeye.com/program/old-bird/SV/createjsGame/html/429.html",
+      "iconloacl": "icon/20170718224648495366.jpg",
+      "pathloacl": "SV/createjsGame/html/429.html",
+      "type": "同时视"
+    },
+    {
+      "gid": 315,
+      "fullname": "海豚之舞",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201708/20170819183756640130.png",
+      "path": "https://game.babyeye.com/program/old-bird/STE/html/ste-fishDancer.html",
+      "iconloacl": "icon/20170819183756640130.png",
+      "pathloacl": "STE/html/ste-fishDancer.html",
+      "type": "立体视"
+    },
+    {
+      "gid": 313,
+      "fullname": "小老鼠吃奶酪",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201708/20170821105903856790.jpg",
+      "path": "https://game.babyeye.com/program/old-bird/STE/html2/ste-mouse-like-cheese.html",
+      "iconloacl": "icon/20170821105903856790.jpg",
+      "pathloacl": "STE/html2/ste-mouse-like-cheese.html",
+      "type": "立体视"
+    },
+    {
+      "gid": 277,
+      "fullname": "E字标辨别方向",
+      "profile": "佩戴矫正眼镜+红蓝镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20170731133305802167.png",
+      "path": "https://game.babyeye.com/program/old-bird/STE/html/ste-identify-direction.html",
+      "iconloacl": "icon/20170731133305802167.png",
+      "pathloacl": "STE/html/ste-identify-direction.html",
+      "type": "立体视"
+    }
+  ]
+}

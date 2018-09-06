@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="one" previous="" next="" version="2.2">
+  <item type="instance" UID="4553"/>
+  <item type="instance" UID="4556"/>
+  <item type="instance" UID="3875"/>
+  <item type="instance" UID="3868"/>
+  <item type="instance" UID="3853"/>
+  <item type="instance" UID="4474"/>
+  <item type="variable" variableName="j" variableType="number" initValue="0"/>
+  <item type="variable" variableName="n" variableType="number" initValue="0"/>
+  <item type="variable" variableName="create" variableType="number" initValue="0"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="n" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="qd"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22FirstScene%22" name="18"/>
+    </item>
+  </item>
+</eventSheets>
