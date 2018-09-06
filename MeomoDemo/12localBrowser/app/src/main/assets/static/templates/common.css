@@ -1,0 +1,57 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.pink-bg{
+    background-color: rgb(255,0,255);
+}
+
+canvas {
+    max-height: 100vh;
+    max-width: 100vw;
+    margin:auto;
+    display: block;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#img-canvas {
+    display: none;
+}
+
+#box2d-canvas {
+    z-index: -10;
+}
+
+#instruction-canvas {
+    z-index: 10;
+}
+
+#game-canvas{
+    z-index: 0;
+}
+
+#bg-canvas {
+    z-index: -10;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+#loading{
+    z-index: 11;
+    margin:auto;
+    display: block;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="TextScene" previous="" next="" version="2.2">
+  <item type="instance" UID="4595"/>
+  <item type="instance" UID="4589"/>
+  <item type="variable" variableName="j" variableType="number" initValue="0"/>
+  <item type="variable" variableName="n" variableType="number" initValue="0"/>
+  <item type="variable" variableName="create" variableType="number" initValue="0"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="AIButton4594"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22FirstScene%22" name="18"/>
+    </item>
+  </item>
+</eventSheets>

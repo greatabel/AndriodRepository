@@ -1,0 +1,12 @@
+{"file":"resourceMerge1_png.png","frames":{
+"audio/fireBg.png":{"x":1,"y":1,"w":1024,"h":768,"offX":0,"offY":0,"sourceW":1024,"sourceH":768},
+"audio/78.png":{"x":1,"y":770,"w":1024,"h":768,"offX":0,"offY":0,"sourceW":1024,"sourceH":768},
+"audio/3-1.png":{"x":1,"y":1539,"w":281,"h":272,"offX":0,"offY":0,"sourceW":281,"sourceH":272},
+"audio/6-2.png":{"x":283,"y":1539,"w":281,"h":272,"offX":0,"offY":0,"sourceW":281,"sourceH":272},
+"audio/4-1.png":{"x":565,"y":1539,"w":281,"h":272,"offX":0,"offY":0,"sourceW":281,"sourceH":272},
+"audio/4-2.png":{"x":847,"y":1539,"w":281,"h":272,"offX":0,"offY":0,"sourceW":281,"sourceH":272},
+"audio/2-2.png":{"x":1026,"y":1,"w":281,"h":272,"offX":0,"offY":0,"sourceW":281,"sourceH":272},
+"audio/5-3.png":{"x":1026,"y":274,"w":281,"h":272,"offX":0,"offY":0,"sourceW":281,"sourceH":272},
+"audio/6-1.png":{"x":1026,"y":547,"w":281,"h":272,"offX":0,"offY":0,"sourceW":281,"sourceH":272},
+"audio/2-1.png":{"x":1026,"y":820,"w":281,"h":272,"offX":0,"offY":0,"sourceW":281,"sourceH":272},
+"audio/2-3.png":{"x":1026,"y":1093,"w":281,"h":272,"offX":0,"offY":0,"sourceW":281,"sourceH":272}}}

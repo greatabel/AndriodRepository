@@ -1,0 +1,12 @@
+{"file":"sorceNum.png","frames":{
+"number_0":{"x":0,"y":0,"w":35,"h":48,"offX":0,"offY":0,"sourceW":35,"sourceH":48},
+"number_1":{"x":0,"y":48,"w":16,"h":46,"offX":10,"offY":2,"sourceW":35,"sourceH":48},
+"number_2":{"x":16,"y":48,"w":31,"h":46,"offX":2,"offY":2,"sourceW":35,"sourceH":48},
+"number_3":{"x":35,"y":0,"w":30,"h":47,"offX":3,"offY":1,"sourceW":35,"sourceH":48},
+"number_4":{"x":47,"y":47,"w":31,"h":44,"offX":2,"offY":4,"sourceW":35,"sourceH":48},
+"number_5":{"x":65,"y":0,"w":30,"h":45,"offX":3,"offY":3,"sourceW":35,"sourceH":48},
+"number_6":{"x":78,"y":45,"w":32,"h":46,"offX":2,"offY":2,"sourceW":35,"sourceH":48},
+"number_7":{"x":95,"y":0,"w":30,"h":45,"offX":3,"offY":3,"sourceW":35,"sourceH":48},
+"number_8":{"x":110,"y":45,"w":32,"h":46,"offX":2,"offY":2,"sourceW":35,"sourceH":48},
+"number_9":{"x":142,"y":45,"w":32,"h":46,"offX":2,"offY":2,"sourceW":35,"sourceH":48},
+"number_dot":{"x":125,"y":0,"w":12,"h":21,"offX":12,"offY":27,"sourceW":35,"sourceH":48}}}

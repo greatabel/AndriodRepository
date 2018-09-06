@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout id="null" sceneSize="800,600" next="SecondScene" previous="one" eventSheet="FirstSceneEventSheet" version="2.2">
+  <layer index="0" parallaxX="100" parallaxY="100" layerAlpha="1" layerVisible="true" cacheAsBitmap="false" bgColor="" bgColorAlpha="" layerScaleX="100" layerScaleY="100"/>
+  <layer index="1" parallaxX="100" parallaxY="100" layerAlpha="1" layerVisible="true" cacheAsBitmap="false" bgColor="" bgColorAlpha="" layerScaleX="100" layerScaleY="100"/>
+  <item UID="4424" plugin="AIButton" name="girlBg" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="0" family="displayobject">
+    <item name="name" value="girlBg" valueDataType="string"/>
+    <item name="uiGuid" value="4424" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="0" valueDataType="number"/>
+    <item name="y" value="0" valueDataType="number"/>
+    <item name="anchorX" value="0" valueDataType="number"/>
+    <item name="anchorY" value="0" valueDataType="number"/>
+    <item name="width" value="800" valueDataType="number"/>
+    <item name="height" value="600" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="upSkin" value="resource%2FuserAsset%2Faudio%2F80.png" valueDataType="string"/>
+    <item name="downSkin" value="resource%2FuserAsset%2Faudio%2F86.png" valueDataType="string"/>
+    <item name="disableSkin" value="resource%2FuserAsset%2Faudio%2F80.png" valueDataType="string"/>
+    <item name="text" value="" valueDataType="string"/>
+    <item name="fontFamily" value="%E5%AE%8B%E4%BD%93" valueDataType="string"/>
+    <item name="size" value="12" valueDataType="number"/>
+    <item name="textColor" value="0" valueDataType="number"/>
+    <item name="bold" value="false" valueDataType="boolean"/>
+    <item name="enableInput" value="false" valueDataType="boolean"/>
+    <item name="textAlign" value="center" valueDataType="string"/>
+    <item name="verticalAlign" value="middle" valueDataType="string"/>
+    <item name="maxChars" value="100" valueDataType="number"/>
+    <item name="italic" value="false" valueDataType="boolean"/>
+    <item name="displayAsPassword" value="false" valueDataType="boolean"/>
+    <item name="wordWrap" value="false" valueDataType="boolean"/>
+    <item name="enabled" value="false" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C600.00%2C800.00%7C600.00%2C800.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C600.00%2C800.00%7C600.00%2C800.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="0" valueDataType="number"/>
+    <item name="behaviors">
+      <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+        <item valueDataType="number" value="0.1" name="onTime"/>
+        <item valueDataType="number" value="0.1" name="offTime"/>
+        <item valueDataType="number" value="0" name="times"/>
+        <item valueDataType="number" value="1" name="enabled"/>
+      </item>
+      <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+    </item>
+  </item>
+  <item UID="3803" plugin="AITextField" name="sum1" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="0" family="text">
+    <item name="name" value="sum1" valueDataType="string"/>
+    <item name="uiGuid" value="3803" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="717.0331765216813" valueDataType="number"/>
+    <item name="y" value="571.8534246621525" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="159.76635304336253" valueDataType="number"/>
+    <item name="height" value="51.60684932430503" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="text" value="0" valueDataType="string"/>
+    <item name="fontFamily" value="%E5%AE%8B%E4%BD%93" valueDataType="string"/>
+    <item name="size" value="30" valueDataType="number"/>
+    <item name="textColor" value="16777215" valueDataType="number"/>
+    <item name="bold" value="false" valueDataType="boolean"/>
+    <item name="enableInput" value="false" valueDataType="boolean"/>
+    <item name="inputType" value="text" valueDataType="string"/>
+    <item name="textAlign" value="center" valueDataType="string"/>
+    <item name="verticalAlign" value="middle" valueDataType="string"/>
+    <item name="maxChars" value="100" valueDataType="number"/>
+    <item name="italic" value="false" valueDataType="boolean"/>
+    <item name="wordWrap" value="false" valueDataType="boolean"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+  <item UID="4448" plugin="AIMovieClip" name="disable" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="1" family="displayobject">
+    <item name="name" value="disable" valueDataType="string"/>
+    <item name="uiGuid" value="4448" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="-132.30366946182295" valueDataType="number"/>
+    <item name="y" value="-7.233170950485096" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="240" valueDataType="number"/>
+    <item name="height" value="240" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="actions" value="" valueDataType="string">
+      <item name="动画" loop="0" fps="6" scaleX="1" scaleY="1">
+        <item src="resource%2FuserAsset%2Faudio%2F1-3.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F1-1.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F1-2.png"/>
+      </item>
+    </item>
+    <item name="layer" value="1" valueDataType="number"/>
+    <item name="behaviors">
+      <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+        <item valueDataType="number" value="0.3" name="onTime"/>
+        <item valueDataType="number" value="0.3" name="offTime"/>
+        <item valueDataType="number" value="0" name="times"/>
+        <item valueDataType="number" value="1" name="enabled"/>
+      </item>
+      <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+    </item>
+  </item>
+  <item UID="4477" plugin="AIMovieClip" name="disabl" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="2" family="displayobject">
+    <item name="name" value="disabl" valueDataType="string"/>
+    <item name="uiGuid" value="4477" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="-133.19096077190704" valueDataType="number"/>
+    <item name="y" value="105.30903922809298" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="240" valueDataType="number"/>
+    <item name="height" value="240" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="actions" value="" valueDataType="string">
+      <item name="动画" loop="0" fps="6" scaleX="1" scaleY="1">
+        <item src="resource%2FuserAsset%2Faudio%2F3-3.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F3-1.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F3-2.png"/>
+      </item>
+    </item>
+    <item name="layer" value="1" valueDataType="number"/>
+    <item name="behaviors">
+      <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+      <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+        <item valueDataType="number" value="0.3" name="onTime"/>
+        <item valueDataType="number" value="0.3" name="offTime"/>
+        <item valueDataType="number" value="0" name="times"/>
+        <item valueDataType="number" value="1" name="enabled"/>
+      </item>
+    </item>
+  </item>
+  <item UID="4483" plugin="AIMovieClip" name="disab" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="3" family="displayobject">
+    <item name="name" value="disab" valueDataType="string"/>
+    <item name="uiGuid" value="4483" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="-132.96818808429248" valueDataType="number"/>
+    <item name="y" value="229.5546803947516" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="240" valueDataType="number"/>
+    <item name="height" value="240" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="actions" value="" valueDataType="string">
+      <item name="动画" loop="0" fps="6" scaleX="1" scaleY="1">
+        <item src="resource%2FuserAsset%2Faudio%2F4-3.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F4-1.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F4-2.png"/>
+      </item>
+    </item>
+    <item name="layer" value="1" valueDataType="number"/>
+    <item name="behaviors">
+      <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+      <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+        <item valueDataType="number" value="0.3" name="onTime"/>
+        <item valueDataType="number" value="0.3" name="offTime"/>
+        <item valueDataType="number" value="0" name="times"/>
+        <item valueDataType="number" value="1" name="enabled"/>
+      </item>
+    </item>
+  </item>
+  <item UID="4489" plugin="AIMovieClip" name="disa" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="4" family="displayobject">
+    <item name="name" value="disa" valueDataType="string"/>
+    <item name="uiGuid" value="4489" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="-133.2" valueDataType="number"/>
+    <item name="y" value="387.2" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="240" valueDataType="number"/>
+    <item name="height" value="240" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="actions" value="" valueDataType="string">
+      <item name="动画" loop="0" fps="6" scaleX="1" scaleY="1">
+        <item src="resource%2FuserAsset%2Faudio%2F5-3.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F5-1.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F5-2.png"/>
+      </item>
+    </item>
+    <item name="layer" value="1" valueDataType="number"/>
+    <item name="behaviors">
+      <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+      <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+        <item valueDataType="number" value="0.3" name="onTime"/>
+        <item valueDataType="number" value="0.3" name="offTime"/>
+        <item valueDataType="number" value="0" name="times"/>
+        <item valueDataType="number" value="1" name="enabled"/>
+      </item>
+    </item>
+  </item>
+  <item UID="4495" plugin="AIMovieClip" name="dis" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="5" family="displayobject">
+    <item name="name" value="dis" valueDataType="string"/>
+    <item name="uiGuid" value="4495" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="-134.21" valueDataType="number"/>
+    <item name="y" value="523.1925863253394" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="240" valueDataType="number"/>
+    <item name="height" value="240" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C240.00%2C240.00%7C240.00%2C240.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="actions" value="" valueDataType="string">
+      <item name="动画" loop="0" fps="6" scaleX="1" scaleY="1">
+        <item src="resource%2FuserAsset%2Faudio%2F6-3.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F6-1.png"/>
+        <item src="resource%2FuserAsset%2Faudio%2F6-2.png"/>
+      </item>
+    </item>
+    <item name="layer" value="1" valueDataType="number"/>
+    <item name="behaviors">
+      <item type="behavior" behaviorType="FlashBehavior" name="闪烁">
+        <item valueDataType="number" value="0.3" name="onTime"/>
+        <item valueDataType="number" value="0.3" name="offTime"/>
+        <item valueDataType="number" value="0" name="times"/>
+        <item valueDataType="number" value="1" name="enabled"/>
+      </item>
+      <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+    </item>
+  </item>
+  <item UID="4562" plugin="AIButton" name="sayOk" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="6" family="displayobject">
+    <item name="name" value="sayOk" valueDataType="string"/>
+    <item name="uiGuid" value="4562" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="754.7371998131889" valueDataType="number"/>
+    <item name="y" value="32.04" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="58" valueDataType="number"/>
+    <item name="height" value="58" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="upSkin" value="resource%2FuserAsset%2Faudio%2Fchong.png" valueDataType="string"/>
+    <item name="downSkin" value="resource%2FuserAsset%2Faudio%2Fchong.png" valueDataType="string"/>
+    <item name="disableSkin" value="resource%2FuserAsset%2Faudio%2Fchong.png" valueDataType="string"/>
+    <item name="text" value="" valueDataType="string"/>
+    <item name="fontFamily" value="%E5%AE%8B%E4%BD%93" valueDataType="string"/>
+    <item name="size" value="12" valueDataType="number"/>
+    <item name="textColor" value="0" valueDataType="number"/>
+    <item name="bold" value="false" valueDataType="boolean"/>
+    <item name="enableInput" value="false" valueDataType="boolean"/>
+    <item name="textAlign" value="center" valueDataType="string"/>
+    <item name="verticalAlign" value="middle" valueDataType="string"/>
+    <item name="maxChars" value="100" valueDataType="number"/>
+    <item name="italic" value="false" valueDataType="boolean"/>
+    <item name="displayAsPassword" value="false" valueDataType="boolean"/>
+    <item name="wordWrap" value="false" valueDataType="boolean"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C58.00%2C58.00%7C58.00%2C58.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C58.00%2C58.00%7C58.00%2C58.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+  <item UID="4574" plugin="AIButton" name="saleA" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="7" family="displayobject">
+    <item name="name" value="saleA" valueDataType="string"/>
+    <item name="uiGuid" value="4574" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="682.86" valueDataType="number"/>
+    <item name="y" value="32.04" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="58" valueDataType="number"/>
+    <item name="height" value="58" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="upSkin" value="resource%2FuserAsset%2Faudio%2Fshuo.png" valueDataType="string"/>
+    <item name="downSkin" value="resource%2FuserAsset%2Faudio%2Fshuo.png" valueDataType="string"/>
+    <item name="disableSkin" value="resource%2FuserAsset%2Faudio%2Fshuo.png" valueDataType="string"/>
+    <item name="text" value="" valueDataType="string"/>
+    <item name="fontFamily" value="%E5%AE%8B%E4%BD%93" valueDataType="string"/>
+    <item name="size" value="12" valueDataType="number"/>
+    <item name="textColor" value="0" valueDataType="number"/>
+    <item name="bold" value="false" valueDataType="boolean"/>
+    <item name="enableInput" value="false" valueDataType="boolean"/>
+    <item name="textAlign" value="center" valueDataType="string"/>
+    <item name="verticalAlign" value="middle" valueDataType="string"/>
+    <item name="maxChars" value="100" valueDataType="number"/>
+    <item name="italic" value="false" valueDataType="boolean"/>
+    <item name="displayAsPassword" value="false" valueDataType="boolean"/>
+    <item name="wordWrap" value="false" valueDataType="boolean"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C58.00%2C58.00%7C58.00%2C58.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C58.00%2C58.00%7C58.00%2C58.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+</layout>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #bg-canvas {
+        margin:auto;
+        position:absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom: 0;
+        z-index: -100;
+        display:block;
+        width:100vw;
+        height:100vh;
+        max-width:100vw;
+        max-height:100vh;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas" width="1280" height="720"></canvas>
+
+    <script src="../../../static/js/jquery.min.js"></script>
+    <script src="../../../static/js/create.js"></script>
+    <script src="../../../static/plugins/createjs/ColorPlugin.js"></script>
+    <script src="../../../static/plugins/createjs/tweenjs-NEXT.combined.js"></script>
+    <script src="../../../static/js/common.js"></script>
+    <script src="BloomBG-es6.js"></script>
+    <script>
+        $(window).ready(function(){
+            createjs.ColorPlugin.install();
+            var config = {
+                colors: ["#FF0000","#00FF00", "#0000FF", "#FF7E00", "#EA00FF", "#00FFFF"],
+                time: 300,
+                canvasID: "bg-canvas"
+            }
+            if(window.bloomBG) window.bloomBG.removeSelf();
+            window.bloomBG = new BloomBG(config);
+        })
+    </script>
+</body>
+</html>

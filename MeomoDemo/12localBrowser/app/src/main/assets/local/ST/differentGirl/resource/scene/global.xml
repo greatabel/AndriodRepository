@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<global>
+  <item UID="4553" plugin="AIAudio" name="AIAudio4552" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="5" family="">
+    <item name="name" value="AIAudio4552" valueDataType="string"/>
+    <item name="uiGuid" value="4553" valueDataType="string"/>
+    <item name="global" value="true" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="-129.45" valueDataType="number"/>
+    <item name="y" value="45.6" valueDataType="number"/>
+    <item name="width" value="30" valueDataType="number"/>
+    <item name="height" value="30" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="url" value="resource%2FuserAsset%2Faudio%2FbgMusic.mp3" valueDataType="string"/>
+    <item name="loop" value="0" valueDataType="number"/>
+    <item name="volume" value="1" valueDataType="number"/>
+    <item name="playOnStart" value="true" valueDataType="boolean"/>
+    <item name="layer" value="0" valueDataType="number"/>
+  </item>
+</global>
