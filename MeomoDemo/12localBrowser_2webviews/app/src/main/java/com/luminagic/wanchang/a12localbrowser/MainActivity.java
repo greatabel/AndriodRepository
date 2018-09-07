@@ -1,6 +1,8 @@
 package com.luminagic.wanchang.a12localbrowser;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -22,8 +24,15 @@ public class MainActivity extends Activity {
     private final Handler handler = new Handler();
     private WebView webView;
     private WebView webViewR;
+    static String pathloacl = "";
 //    private TextView textView;
 //    private Button button;
+
+    public static Intent newIntent(Context packageContext) {
+        Intent i = new Intent(packageContext, MainActivity.class);
+
+        return i;
+    }
 
     private class AndroidBridge {
         @JavascriptInterface
@@ -65,8 +74,13 @@ public class MainActivity extends Activity {
         webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
         webView.getSettings().setSupportMultipleWindows(true);
 
+        Intent intent = getIntent();
+        pathloacl = intent.getStringExtra("key");
+
+        String webView_url = "file:///android_asset/local/" + pathloacl;
+        Log.d("test",webView_url);
         // load the web page from a local asset
-        webView.loadUrl("file:///android_asset/local/ST/differentGirl/index.html");
+        webView.loadUrl(webView_url);
 
         //---------第二个webview------
         //Turn on Javascript in the embedded browser
@@ -81,7 +95,7 @@ public class MainActivity extends Activity {
         webViewR.getSettings().setSupportMultipleWindows(true);
 
         // load the web page from a local asset
-        webViewR.loadUrl("file:///android_asset/local/ST/differentGirl/index.html");
+        webViewR.loadUrl(webView_url);
 
 
         //--------------------------

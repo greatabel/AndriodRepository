@@ -1,6 +1,7 @@
 package com.luminagic.wanchang.a12localbrowser;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -105,22 +106,26 @@ public class GameListActivity extends ListActivity {
     {
         super.onListItemClick(l, v, position, id);
 //        Log.d("cardNumber", values.get(position).getCardNumber());
-        AlertDialog alertDialog = new AlertDialog.Builder(GameListActivity.this).create();
-        alertDialog.setTitle("Alert");
+//        AlertDialog alertDialog = new AlertDialog.Builder(GameListActivity.this).create();
+//        alertDialog.setTitle("Alert");
         String pathloacl = "";
         try {
             pathloacl = results.getJSONObject(position).getString("pathloacl").toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        alertDialog.setMessage( Integer.toString(position) + pathloacl);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertDialog.show();
+//        alertDialog.setMessage( Integer.toString(position) + pathloacl);
+//        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                    }
+//                });
+//        alertDialog.show();
+
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("key", pathloacl);
+        startActivityForResult(i, position);
     }
 
 }
