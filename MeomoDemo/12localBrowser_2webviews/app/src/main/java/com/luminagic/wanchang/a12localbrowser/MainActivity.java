@@ -3,6 +3,7 @@ package com.luminagic.wanchang.a12localbrowser;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -50,7 +51,6 @@ public class MainActivity extends Activity {
 
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +80,8 @@ public class MainActivity extends Activity {
         String webView_url = "file:///android_asset/local/" + pathloacl;
         Log.d("test",webView_url);
         // load the web page from a local asset
+//        webView.getSettings().setUseWideViewPort(true);
+//        webView.getSettings().setLoadWithOverviewMode(true);
         webView.loadUrl(webView_url);
 
         //---------第二个webview------
@@ -94,6 +96,8 @@ public class MainActivity extends Activity {
         webViewR.getSettings().setAllowUniversalAccessFromFileURLs(true);
         webViewR.getSettings().setSupportMultipleWindows(true);
 
+//        webViewR.getSettings().setUseWideViewPort(true);
+//        webViewR.getSettings().setLoadWithOverviewMode(true);
         // load the web page from a local asset
         webViewR.loadUrl(webView_url);
 
