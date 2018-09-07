@@ -26,7 +26,8 @@ public class GameListActivity extends ListActivity {
     String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
             "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
             "Linux", "OS/2" };
-    JSONArray jsonArray = null;
+    ArrayList<String> mylist = new ArrayList<String>();
+    JSONArray results = null;
 
     public String readJSONFromAsset() {
         String json = null;
@@ -55,17 +56,20 @@ public class GameListActivity extends ListActivity {
         }
         try {
 
-            JSONArray results = (JSONArray) obj.get("gamelist");
-            AlertDialog alertDialog = new AlertDialog.Builder(GameListActivity.this).create();
-            alertDialog.setTitle("Alert");
-            alertDialog.setMessage( results.getJSONObject(0).getString("fullname").toString());
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-            alertDialog.show();
+            results = (JSONArray) obj.get("gamelist");
+            for(int i=0;i<results.length();i++) {
+                mylist.add(results.getJSONObject(i).getString("fullname"));
+            }
+//            AlertDialog alertDialog = new AlertDialog.Builder(GameListActivity.this).create();
+//            alertDialog.setTitle("Alert");
+//            alertDialog.setMessage( results.getJSONObject(0).getString("fullname").toString());
+//            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+//                    new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.dismiss();
+//                        }
+//                    });
+//            alertDialog.show();
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -92,7 +96,7 @@ public class GameListActivity extends ListActivity {
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, values);
+                android.R.layout.simple_list_item_1, mylist);
         setListAdapter(adapter);
     }
 
@@ -101,16 +105,22 @@ public class GameListActivity extends ListActivity {
     {
         super.onListItemClick(l, v, position, id);
 //        Log.d("cardNumber", values.get(position).getCardNumber());
-//        AlertDialog alertDialog = new AlertDialog.Builder(GameListActivity.this).create();
-//        alertDialog.setTitle("Alert");
-//        alertDialog.setMessage( Integer.toString(position));
-//        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-//                new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.dismiss();
-//                    }
-//                });
-//        alertDialog.show();
+        AlertDialog alertDialog = new AlertDialog.Builder(GameListActivity.this).create();
+        alertDialog.setTitle("Alert");
+        String pathloacl = "";
+        try {
+            pathloacl = results.getJSONObject(position).getString("pathloacl").toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        alertDialog.setMessage( Integer.toString(position) + pathloacl);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 
 }
