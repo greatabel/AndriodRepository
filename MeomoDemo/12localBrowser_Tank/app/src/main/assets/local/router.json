@@ -1,0 +1,26 @@
+{
+  "name": "视琦视觉训练",
+  "version": "1.0.0",
+  "gamelist": [
+    {
+      "gid": 0,
+      "fullname": "坦克大战0",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/20170718211230890574.jpg",
+      "path": "https://game.babyeye.com/program/old-bird/ST/differentGirl/",
+      "iconloacl": "icon/20170718211230890574.jpg",
+      "pathloacl": "index.html#/VTX/tankFu",
+      "type": "视觉刺激"
+    },
+    {
+      "gid": 1,
+      "fullname": "坦克大战1",
+      "profile": "配戴矫正眼镜进行训练",
+      "icon": "https://assets.babyeye.com/train/icon/201707/20170727135848274612.png",
+      "path": "https://game.babyeye.com/program/old-bird/EX/findBanner/index.html",
+      "iconloacl": "icon/20170727135848274612.png",
+      "pathloacl": "index.html#/VTX/tankAn",
+      "type": "视觉精细"
+    }
+  ]
+}
