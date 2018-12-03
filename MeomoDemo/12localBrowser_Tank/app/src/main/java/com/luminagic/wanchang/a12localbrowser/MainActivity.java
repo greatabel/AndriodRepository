@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         webView = (WebView)findViewById(R.id.web_view);
-        webViewR = (WebView)findViewById(R.id.web_viewR);
+//        webViewR = (WebView)findViewById(R.id.web_viewR);
 //        textView = (TextView)findViewById(R.id.text_view);
 //        button = (Button)findViewById(R.id.button);
 
@@ -93,20 +93,20 @@ public class MainActivity extends Activity {
 
         //---------第二个webview------
         //Turn on Javascript in the embedded browser
-        webViewR.getSettings().setJavaScriptEnabled(true);
-
-
-        //调用JS方法.安卓版本大于17,加上注解 @JavascriptInterface
-        webViewR.getSettings().setJavaScriptEnabled(true);
-        webViewR.getSettings().setAllowFileAccess(true);
-        webViewR.getSettings().setAllowFileAccessFromFileURLs(true);
-        webViewR.getSettings().setAllowUniversalAccessFromFileURLs(true);
-        webViewR.getSettings().setSupportMultipleWindows(true);
+//        webViewR.getSettings().setJavaScriptEnabled(true);
+//
+//
+//        //调用JS方法.安卓版本大于17,加上注解 @JavascriptInterface
+//        webViewR.getSettings().setJavaScriptEnabled(true);
+//        webViewR.getSettings().setAllowFileAccess(true);
+//        webViewR.getSettings().setAllowFileAccessFromFileURLs(true);
+//        webViewR.getSettings().setAllowUniversalAccessFromFileURLs(true);
+//        webViewR.getSettings().setSupportMultipleWindows(true);
 
 //        webViewR.getSettings().setUseWideViewPort(true);
 //        webViewR.getSettings().setLoadWithOverviewMode(true);
         // load the web page from a local asset
-        webViewR.loadUrl(webView_url);
+//        webViewR.loadUrl(webView_url);
 
 
         //--------------------------
