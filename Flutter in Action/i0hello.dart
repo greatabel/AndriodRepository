@@ -1,13 +1,20 @@
 void main() {
     print('Hello, Dart from abel!!');
-    helloDart();
-    helloDartA('test');
+    helloDartA();
+    List<String> greetings = [
+    'World',
+    'Mars',
+    'Oregon'];
+    for(var name in greetings) {
+        helloDart(name);
+    }
+
 }
 
-void helloDart() {
+void helloDartA() {
     print('Hello, Dart!');
 }
 
-void helloDartA(String name) {
+void helloDart(String name) {
     print('Hllo, $name !');
 }
