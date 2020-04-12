@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndriodRepository-MeomoSNScanner.iml" filepath="$PROJECT_DIR$/AndriodRepository-MeomoSNScanner.iml" group="MeomoSNScanner" />
       <module fileurl="file://$PROJECT_DIR$/MeomoSNScanner.iml" filepath="$PROJECT_DIR$/MeomoSNScanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/MeomoSNScanner-app.iml" filepath="$PROJECT_DIR$/app/MeomoSNScanner-app.iml" group="MeomoSNScanner/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
