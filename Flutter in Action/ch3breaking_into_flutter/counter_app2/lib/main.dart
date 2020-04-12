@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:counter_app2/fancy_button.dart';
 
 void main() => runApp(MyApp());
 
@@ -45,6 +46,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  void _decrementCounter() {
+    setState(() => _counter--);
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -97,6 +102,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
+            ),
+            RaisedButton(
+              child: Text("Decremment计数器"),
+              onPressed: _decrementCounter,
             ),
           ],
         ),
