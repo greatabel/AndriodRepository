@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page1'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -52,14 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+    setState(() => _counter++);
+  }
+
+  void _resetCounter() {
+    setState(() => _counter = 0);
   }
 
   @override
@@ -96,24 +93,46 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            Expanded(
+              child:   Text(
+                'You have pushed the button this many times:',
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+            Expanded(
+              child: Text(
+                    '$_counter',
+                    style: Theme.of(context).textTheme.display1,
+                  ),
             ),
-            RaisedButton(
-              child: Text("Decremment计数器"),
-              onPressed: _decrementCounter,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                RaisedButton(
+                child: Text(
+                    "Incremment计数器",
+                    style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.red,
+                onPressed: _incrementCounter,
+              ),
+                RaisedButton(
+                  child: Text(
+                    "Decremment计数器",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  color: Colors.green,
+                  onPressed: _decrementCounter,
+                ),
+              ],
             ),
+
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        onPressed: _resetCounter,
+        tooltip: '重置Counter',
+        child: Icon(Icons.refresh),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
