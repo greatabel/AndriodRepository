@@ -93,17 +93,28 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Expanded(
-              child:   Text(
-                'You have pushed the button this many times:',
+            Container(
+            margin: EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                color: Colors.blue.withOpacity(0.25),
+                borderRadius: BorderRadius.circular(4.0),
+              ),
+              child:  Image.asset(
+              'flutter_logo_1080.png',
+              width: 100.0,
               ),
             ),
-            Expanded(
-              child: Text(
+
+              Text(
+                'You have pushed the button this many times:',
+              ),
+
+
+              Text(
                     '$_counter',
                     style: Theme.of(context).textTheme.display1,
                   ),
-            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
