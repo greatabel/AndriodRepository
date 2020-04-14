@@ -1,0 +1,7 @@
+name: i2async_get_file
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+  http: any
