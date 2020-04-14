@@ -34,11 +34,18 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
+  fonts:
+    - family: Cabin
+      fonts:
+        - asset: assets/fonts/Cabin-Regular.otf
+        - asset: assets/fonts/Cabin-Bold.otf
+        - asset: assets/fonts/Cabin-Italic.otf
+        - asset: assets/fonts/Cabin-Medium.otf
+        - asset: assets/fonts/Cabin-BoldItalic.otf
+        - asset: assets/fonts/Cabin-MediumItalic.otf
+        - asset: assets/fonts/Cabin-SemiBold.otf
+        - asset: assets/fonts/Cabin-SemiBoldItalic.otf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
