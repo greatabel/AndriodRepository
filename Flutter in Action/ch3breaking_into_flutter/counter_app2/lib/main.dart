@@ -46,7 +46,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  bool _reverse = false;
   void _decrementCounter() {
     setState(() => _counter--);
   }
@@ -59,6 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() => _counter = 0);
   }
 
+  void _swap(){
+    setState(() {
+      _reverse = !_reverse;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -67,6 +73,26 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    final incrementButton = FancyButton(
+      child: Text(
+        "增加",
+        style: TextStyle(color: Colors.white),
+      ),
+      onPressed: _incrementCounter,
+    );
+
+    final decrementButton = FancyButton(
+      child: Text(
+        "减少",
+        style: TextStyle(color: Colors.white),
+      ),
+      onPressed: _decrementCounter,
+    );
+
+    var _buttons = <Widget>[incrementButton, decrementButton];
+    if (_reverse) {
+      _buttons = _buttons.reversed.toList();
+    }
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -117,24 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                RaisedButton(
-                child: Text(
-                    "Incremment计数器",
-                    style: TextStyle(color: Colors.white),
-                ),
-                color: Colors.red,
-                onPressed: _incrementCounter,
-              ),
-                RaisedButton(
-                  child: Text(
-                    "Decremment计数器",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  color: Colors.green,
-                  onPressed: _decrementCounter,
-                ),
-              ],
+              children: _buttons,
             ),
 
           ],

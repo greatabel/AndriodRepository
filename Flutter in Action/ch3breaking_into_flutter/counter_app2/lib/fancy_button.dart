@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class FancyButton extends StatefulWidget {
@@ -9,7 +10,7 @@ class FancyButton extends StatefulWidget {
     Key key,
     this.onPressed,
     this.child,
-  }): super(key: key);
+  }) : super(key: key);
 
   @override
   _FancyButtonState createState() => _FancyButtonState();
