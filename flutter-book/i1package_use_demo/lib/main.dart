@@ -58,7 +58,15 @@ class FirstPage extends StatelessWidget {
                     return SecondPage();
                   }));
                 },
-                child: new Text('下一页!'),
+                child: new Text('第2页!'),
+              ),
+              new RaisedButton(
+                onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder:(context){
+                    return ThirdPage();
+                  }));
+                },
+                child: new Text('第3页!'),
               ),
               new RaisedButton(
                 onPressed: (){
@@ -129,4 +137,50 @@ class Counter with ChangeNotifier {
     //通知所有听众进行刷新
     notifyListeners();
   }
+}
+
+class ThirdPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(title: Text("3 page")),
+      body: Center(
+        //获取计数器中的count值
+        child: Text("${Provider.of<Counter>(context).count}"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          process();
+          print(getUserInfo('小王', '男'));
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+
+  void process(){
+    var week = new Map();
+    week['Monday'] = '星期一';
+    week['Tuesday'] = '星期二';
+    week['Wednesday'] = '星期三';
+    week['Thursday'] = '星期四';
+    week['Friday'] = '星期五';
+    week['Saturday'] = '星期六';
+    week['Sunday'] = '星期日';
+    week['0'] = '星期一';
+
+    //assert(week['Monday'] == null);
+
+    print(week.length);
+    print(week['Sunday']);
+  }
+
+  String getUserInfo(String name, String sex, [String from = '中国']) {
+    var info = '$name的性别是$sex';
+    if (from != null) {
+      info = '$info来自$from';
+    }
+    return info;
+  }
+
 }
