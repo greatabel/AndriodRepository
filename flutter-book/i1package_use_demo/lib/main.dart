@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 import 'dart:convert';
 import 'dart:io';
@@ -11,20 +12,35 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
-    return new MaterialApp(
-      title: "第三方包示例",
-      home: new Scaffold(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Counter()),
+      ],
+      child: new MaterialApp(
+        title: "第三方包示例",
+        home: FirstPage(),
+      ),
+    );
+  }
+
+
+}
+
+class FirstPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
         appBar: new AppBar(title: new Text('第三方包示例')),
         body: new Center(
           child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new RaisedButton(
-              onPressed: (){
-                const url = "https://m.douban.com";
-                launch(url);
-              },
-              child: new Text('打开douban'),
+                onPressed: (){
+                  const url = "https://m.douban.com";
+                  launch(url);
+                },
+                child: new Text('打开douban'),
               ),
               new RaisedButton(
                 onPressed: (){
@@ -38,6 +54,14 @@ class MyApp extends StatelessWidget {
               ),
               new RaisedButton(
                 onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder:(context){
+                    return SecondPage();
+                  }));
+                },
+                child: new Text('下一页!'),
+              ),
+              new RaisedButton(
+                onPressed: (){
                   getWeatherData();
                 },
                 child: new Text('获取天气'),
@@ -45,7 +69,6 @@ class MyApp extends StatelessWidget {
           ),
 
         )
-      ),
     );
   }
 
@@ -54,7 +77,7 @@ class MyApp extends StatelessWidget {
       HttpClient httpClient = new HttpClient();
 
       HttpClientRequest request = await httpClient.getUrl(
-        Uri.parse("http://t.weather.sojson.com/api/weather/city/101030100")
+          Uri.parse("http://t.weather.sojson.com/api/weather/city/101030100")
       );
 
       HttpClientResponse response = await request.close();
@@ -69,5 +92,41 @@ class MyApp extends StatelessWidget {
     } finally {
 
     }
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(title: Text("second page")),
+      body: Center(
+        //获取计数器中的count值
+        child: Text("${Provider.of<Counter>(context).count}"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          print('###');
+          //调用数据模型中的increment方法更改数据
+          Provider.of<Counter>(context, listen: false).increment();
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+class Counter with ChangeNotifier {
+
+  //存储数据
+  int _count = 0;
+  //提供外部能够访问的数据
+  int get count => _count;
+
+  //提供更改数据的方法
+  void increment(){
+    _count++;
+    //通知所有听众进行刷新
+    notifyListeners();
   }
 }
