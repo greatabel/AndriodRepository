@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'container_demo.dart';
+import 'image_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -43,9 +44,11 @@ class FirstPage extends StatelessWidget {
 
               new RaisedButton(
                 onPressed: (){
-
+                  Navigator.push(context,MaterialPageRoute(builder:(context){
+                    return ImageDemo();
+                  }));
                 },
-                child: new Text('获取天气'),
+                child: new Text('图片demo'),
               ),],
           ),
 
