@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import 'package:http/http.dart' as http;
+
+import 'dart:convert';
+import 'dart:io';
 
 void main() => runApp(MyApp());
 
@@ -31,11 +35,39 @@ class MyApp extends StatelessWidget {
                   });
                 },
                 child: new Text('http请求按钮'),
+              ),
+              new RaisedButton(
+                onPressed: (){
+                  getWeatherData();
+                },
+                child: new Text('获取天气'),
               ),],
           ),
 
         )
       ),
     );
+  }
+
+  void getWeatherData() async {
+    try {
+      HttpClient httpClient = new HttpClient();
+
+      HttpClientRequest request = await httpClient.getUrl(
+        Uri.parse("http://t.weather.sojson.com/api/weather/city/101030100")
+      );
+
+      HttpClientResponse response = await request.close();
+
+      var result = await response.transform(utf8.decoder).join();
+      print(result);
+
+      httpClient.close();
+
+    } catch (e) {
+      print("请求失败: $e");
+    } finally {
+
+    }
   }
 }
