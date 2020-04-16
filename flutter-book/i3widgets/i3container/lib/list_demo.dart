@@ -74,7 +74,30 @@ class ListDemo extends StatelessWidget {
                 ),
               ],
             ),
-          ),)
+          ),),
+          Expanded(child:new GridView.count(
+            primary: false,
+            padding: const EdgeInsets.all(20.0),
+            crossAxisSpacing: 30.0,
+            crossAxisCount: 3,
+            children: <Widget>[
+              const Text('第一行第一列'),
+              const Text('第一行第二列'),
+              const Text('第一行第三列'),
+              const Text('第二行第一列'),
+              const Text('第二行第二列'),
+              const Text('第二行第三列'),
+              const Text('第三行第一列'),
+              const Text('第三行第二列'),
+              const Text('第三行第三列'),
+              const Text('第四行第一列'),
+              const Text('第四行第二列'),
+              const Text('第四行第三列'),
+              const Text('第五行第一列'),
+              const Text('第五行第二列'),
+              const Text('第五行第三列'),
+            ]
+          )),
         ]
       )
     );

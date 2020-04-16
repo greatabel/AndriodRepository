@@ -5,6 +5,8 @@ import 'container_demo.dart';
 import 'image_widget.dart';
 import 'text_demo.dart';
 import 'list_demo.dart';
+import 'longlistview.dart';
+import 'loginform.dart';
 
 void main() => runApp(MyApp());
 
@@ -67,6 +69,22 @@ class FirstPage extends StatelessWidget {
                   }));
                 },
                 child: new Text('列表demo'),
+              ),
+              new RaisedButton(
+                onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder:(context){
+                    return LongListViewDemo();
+                  }));
+                },
+                child: new Text('长列表demo'),
+              ),
+              new RaisedButton(
+                onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder:(context){
+                    return FormDeo();
+                  }));
+                },
+                child: new Text('login表单demo'),
               ),],
           ),
 
