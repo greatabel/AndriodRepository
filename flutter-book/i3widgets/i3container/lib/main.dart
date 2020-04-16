@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 
 import 'container_demo.dart';
 import 'image_widget.dart';
+import 'text_demo.dart';
+import 'list_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,6 +51,22 @@ class FirstPage extends StatelessWidget {
                   }));
                 },
                 child: new Text('图片demo'),
+              ),
+              new RaisedButton(
+                  onPressed: (){
+                Navigator.push(context,MaterialPageRoute(builder:(context){
+                  return TextDemo();
+                }));
+              },
+              child: new Text('文字demo'),
+              ),
+              new RaisedButton(
+                onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder:(context){
+                    return ListDemo();
+                  }));
+                },
+                child: new Text('列表demo'),
               ),],
           ),
 
