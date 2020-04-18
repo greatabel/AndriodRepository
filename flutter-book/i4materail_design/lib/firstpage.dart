@@ -10,10 +10,10 @@ class FirstPage extends StatefulWidget {
   _SecondPageState createState() => _SecondPageState();
 
 }
-
+enum ConferenceItem { AddMember, LockConference, ModifyLayout, TurnoffAll }
 class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMixin{
   TabController _controller;
-
+  final GlobalKey _menuKey = new GlobalKey();
   @override
   void initState() {
     super.initState();
@@ -22,6 +22,30 @@ class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMi
 
   @override
   Widget build(BuildContext context) {
+    //会控菜单项
+
+    final button = new PopupMenuButton(
+        key: _menuKey,
+        itemBuilder: (_) => <PopupMenuItem<ConferenceItem>>[
+          const PopupMenuItem<ConferenceItem>(//菜单项
+            value: ConferenceItem.AddMember,
+            child: Text('添加成员'),
+          ),
+          const PopupMenuItem<ConferenceItem>(
+            value: ConferenceItem.LockConference,
+            child: Text('锁定会议'),
+          ),
+          const PopupMenuItem<ConferenceItem>(
+            value: ConferenceItem.ModifyLayout,
+            child: Text('修改布局'),
+          ),
+          const PopupMenuItem<ConferenceItem>(
+            value: ConferenceItem.TurnoffAll,
+            child: Text('挂断所有'),
+          ),
+        ],
+        onSelected: (_) {});
+
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("第1页demo"),
@@ -44,7 +68,20 @@ class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMi
       ),
       body: TabBarView(
         children: [
-          new Text("This is call Tab View"),
+          Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new ListTile(title: new Text('PopupMenuButton组件示例'), trailing: button, onTap: () {
+                    // This is a hack because _PopupMenuButtonState is private.
+                    dynamic state = _menuKey.currentState;
+                    state.showButtonMenu();
+                  }),
+                  MyLayout()
+                ],
+              )
+          ),
+
           new Text("This is chat Tab View"),
           new Text("This is notification Tab View"),
         ],
@@ -52,4 +89,55 @@ class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMi
       ),
     );
   }
+}
+
+class MyLayout extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: RaisedButton(
+        child: Text('Show alert'),
+        onPressed: () {
+          showAlertDialog(context);
+        },
+      ),
+    );
+  }
+}
+
+showAlertDialog(BuildContext context) {
+
+  // set up the buttons
+  Widget remindButton = FlatButton(
+    child: Text("Remind me later"),
+    onPressed:  () {},
+  );
+  Widget cancelButton = FlatButton(
+    child: Text("Cancel"),
+    onPressed:  () {Navigator.pop(context);},
+  );
+  Widget launchButton = FlatButton(
+    child: Text("Launch missile"),
+    onPressed:  () {},
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Notice"),
+    content: Text("Launching this missile will destroy the entire universe. Is this what you intended to do?"),
+    actions: [
+      remindButton,
+      cancelButton,
+      launchButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

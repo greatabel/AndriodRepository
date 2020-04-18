@@ -98,7 +98,7 @@ class SecondPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
-                child: Text('点我可以跳转到第1页tab'),
+                child: Text('第1页tab/menu/dialog'),
                 onPressed: (){
                   Navigator.pushNamed(context, '/first');
                 },
