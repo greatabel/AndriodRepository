@@ -11,9 +11,12 @@ class FirstPage extends StatefulWidget {
 
 }
 enum ConferenceItem { AddMember, LockConference, ModifyLayout, TurnoffAll }
+
 class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMixin{
+
   TabController _controller;
   final GlobalKey _menuKey = new GlobalKey();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   void initState() {
     super.initState();
@@ -23,6 +26,7 @@ class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMi
   @override
   Widget build(BuildContext context) {
     //会控菜单项
+
 
     final button = new PopupMenuButton(
         key: _menuKey,
@@ -47,6 +51,7 @@ class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMi
         onSelected: (_) {});
 
     return new Scaffold(
+      key: _scaffoldKey,
       appBar: new AppBar(
         title: new Text("第1页demo"),
         bottom: TabBar(
@@ -72,12 +77,24 @@ class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMi
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  new ListTile(title: new Text('PopupMenuButton组件示例'), trailing: button, onTap: () {
+                  new ListTile(title: new Text('PopupMenuButton组件示例'),
+                                trailing: button, onTap: () {
                     // This is a hack because _PopupMenuButtonState is private.
                     dynamic state = _menuKey.currentState;
                     state.showButtonMenu();
                   }),
-                  MyLayout()
+                  MyLayout(),
+                  RaisedButton(
+                    child: Text('snackbar'),
+                    onPressed: (){
+                      //点击回调事件 弹出一句提示语句
+                      _scaffoldKey.currentState.showSnackBar(SnackBar(
+                          duration: const Duration(seconds: 2),
+                        //提示信息内容部分
+                        content: Text("显示SnackBar"),
+                      ));
+                    },
+                  ),
                 ],
               )
           ),
@@ -87,6 +104,7 @@ class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMi
         ],
         controller: _controller,
       ),
+
     );
   }
 }
@@ -125,7 +143,8 @@ showAlertDialog(BuildContext context) {
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Notice"),
-    content: Text("Launching this missile will destroy the entire universe. Is this what you intended to do?"),
+    content: Text("Launching this missile will destroy the entire universe. "
+        "Is this what you intended to do?"),
     actions: [
       remindButton,
       cancelButton,
