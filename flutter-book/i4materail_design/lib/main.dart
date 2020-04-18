@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'firstpage.dart';
+import 'thirdpage.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/first': (BuildContext context) => FirstPage(),
         '/second': (BuildContext context) => SecondPage(),
+        '/third':(BuildContext context) => ThirdPage(),
       },
 //      initialRoute: '/first',
       theme: new ThemeData(primarySwatch: Colors.cyan),
@@ -90,12 +92,23 @@ class SecondPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title: Text('这是第2页')),
         body: Center(
-          child: RaisedButton(
-            child: Text('这是第2页内容, 点我可以跳转'),
-            onPressed: (){
-              Navigator.pushNamed(context, '/first');
-            },
-          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                child: Text('点我可以跳转到第1页'),
+                onPressed: (){
+                  Navigator.pushNamed(context, '/first');
+                },
+              ),
+              RaisedButton(
+                child: Text('点我可以跳转到第3页'),
+                onPressed: (){
+                  Navigator.pushNamed(context, '/third');
+                },
+              ),
+            ],
+          )
         )
     );
   }
