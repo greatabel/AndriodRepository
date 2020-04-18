@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i5layout/align_page.dart';
 import 'package:i5layout/paddingpage.dart';
 
 void main() => runApp(
@@ -7,6 +8,7 @@ void main() => runApp(
     home: LayoutDemo(),
     routes: {
       '/padding': (BuildContext context) => PaddingPage(),
+      '/align': (BuildContext context) => AlignPage(),
 
     },
   ),
@@ -88,6 +90,20 @@ class LayoutDemo extends StatelessWidget {
               ),
             ],
           ),
+          Row(children: <Widget>[
+            RaisedButton(
+              child: Text('padding'),
+              onPressed: (){
+                Navigator.pushNamed(context, '/padding');
+              },
+            ),
+            RaisedButton(
+              child: Text('align'),
+              onPressed: (){
+                Navigator.pushNamed(context, '/align');
+              },
+            ),
+          ],)
         ],
       ),
     );
@@ -100,7 +116,7 @@ class LayoutDemo extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed:  () {
 
-          Navigator.pushNamed(context, '/padding');
+//          Navigator.pushNamed(context, '/padding');
         },
         tooltip: '暂时测试跳转',
         child: Icon(Icons.airplanemode_active),
