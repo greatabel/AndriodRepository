@@ -27,7 +27,48 @@ class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMi
   Widget build(BuildContext context) {
     //会控菜单项
 
-
+    var card = SizedBox(
+      //限定高度
+      height: 250.0,
+      //添加Card组件
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        color: Colors.red,
+        //垂直布局
+        child: Column(
+          children: <Widget>[
+            ListTile(
+              //标题
+              title: Text(
+                '深圳市南山区深南大道',style: TextStyle(fontWeight: FontWeight.w300),
+              ),
+              //子标题
+              subtitle: Text('XX有限公司'),
+              //左侧图标
+              leading: Icon(
+                Icons.home,
+                color: Colors.lightBlue,
+              ),
+            ),
+            //分隔线
+            Divider(),
+            ListTile(
+              title: Text(
+                '深圳市罗湖区沿海大道',style: TextStyle(fontWeight: FontWeight.w300),
+              ),
+              subtitle: Text('XX培训机构'),
+              leading: Icon(
+                Icons.school,
+                color: Colors.lightBlue,
+              ),
+            ),
+            Divider(),
+          ],
+        ),
+      ),
+    );
     final button = new PopupMenuButton(
         key: _menuKey,
         itemBuilder: (_) => <PopupMenuItem<ConferenceItem>>[
@@ -100,7 +141,7 @@ class _SecondPageState extends State<FirstPage> with SingleTickerProviderStateMi
           ),
 
           new Text("This is chat Tab View"),
-          new Text("This is notification Tab View"),
+          card
         ],
         controller: _controller,
       ),
