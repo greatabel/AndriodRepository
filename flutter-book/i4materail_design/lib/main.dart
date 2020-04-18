@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i4materail_design/drawer_demo.dart';
 
 import 'firstpage.dart';
 import 'thirdpage.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         '/first': (BuildContext context) => FirstPage(),
         '/second': (BuildContext context) => SecondPage(),
         '/third':(BuildContext context) => ThirdPage(),
+        '/drawer': (BuildContext context) => DrawerPage(),
       },
 //      initialRoute: '/first',
       theme: new ThemeData(primarySwatch: Colors.cyan),
@@ -96,15 +98,21 @@ class SecondPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
-                child: Text('点我可以跳转到第1页'),
+                child: Text('点我可以跳转到第1页tab'),
                 onPressed: (){
                   Navigator.pushNamed(context, '/first');
                 },
               ),
               RaisedButton(
-                child: Text('点我可以跳转到第3页'),
+                child: Text('点我可以跳转到第3页tab'),
                 onPressed: (){
                   Navigator.pushNamed(context, '/third');
+                },
+              ),
+              RaisedButton(
+                child: Text('点我可以跳转到抽屉Drawer'),
+                onPressed: (){
+                  Navigator.pushNamed(context, '/drawer');
                 },
               ),
             ],
