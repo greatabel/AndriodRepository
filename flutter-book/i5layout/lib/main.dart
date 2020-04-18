@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:i5layout/paddingpage.dart';
 
 void main() => runApp(
   MaterialApp(
     title: 'Container容器布局示例',
     home: LayoutDemo(),
+    routes: {
+      '/padding': (BuildContext context) => PaddingPage(),
+
+    },
   ),
 );
 
@@ -92,6 +97,15 @@ class LayoutDemo extends StatelessWidget {
         title: Text('Container容器布局示例'),
       ),
       body: container,
+      floatingActionButton: FloatingActionButton(
+        onPressed:  () {
+
+          Navigator.pushNamed(context, '/padding');
+        },
+        tooltip: '暂时测试跳转',
+        child: Icon(Icons.airplanemode_active),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
