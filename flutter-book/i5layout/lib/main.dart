@@ -3,6 +3,7 @@ import 'package:i5layout/align_page.dart';
 import 'package:i5layout/aspect_radio_page.dart';
 import 'package:i5layout/fittedbox_page.dart';
 import 'package:i5layout/gridview_page.dart';
+import 'package:i5layout/offstage_page.dart';
 import 'package:i5layout/overflowbox_page.dart';
 import 'package:i5layout/paddingpage.dart';
 import 'package:i5layout/positon_page.dart';
@@ -25,11 +26,14 @@ void main() => runApp(
       '/fractionallysizedbox':(BuildContext context) => FractionllySizedBoxPage(),
       '/gridview':(BuildContext context) => GridViewPage(),
       '/table':(BuildContext context) => TablePage(),
+      '/offstage':(BuildContext context) => OffStagePage(),
     },
   ),
 );
 
 class LayoutDemo extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     //返回一个Container对象
@@ -155,7 +159,7 @@ class LayoutDemo extends StatelessWidget {
               onPressed: (){
                 Navigator.pushNamed(context, '/fractionallysizedbox');
               },
-            ),
+            )
           ],),
           Row(
             children: <Widget>[
@@ -170,6 +174,13 @@ class LayoutDemo extends StatelessWidget {
                   Navigator.pushNamed(context, '/table');
                 },
               ),
+              RaisedButton(
+                child: Text('offstage'),
+                onPressed: (){
+                Navigator.pushNamed(context, '/offstage');
+                },
+    ),
+
             ],
           )
         ],
@@ -184,10 +195,9 @@ class LayoutDemo extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed:  () {
 
-//          Navigator.pushNamed(context, '/padding');
         },
-        tooltip: '暂时测试跳转',
-        child: Icon(Icons.airplanemode_active),
+        tooltip: '显示隐藏',
+        child: Icon(Icons.flip),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
