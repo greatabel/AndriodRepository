@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:i5layout/align_page.dart';
+import 'package:i5layout/aspect_radio_page.dart';
 import 'package:i5layout/fittedbox_page.dart';
+import 'package:i5layout/overflowbox_page.dart';
 import 'package:i5layout/paddingpage.dart';
 import 'package:i5layout/positon_page.dart';
 import 'package:i5layout/stack_page.dart';
+import 'package:i5layout/fractionllysizedbox_page.dart';
 
 void main() => runApp(
   MaterialApp(
@@ -15,6 +18,9 @@ void main() => runApp(
       '/fittedbox': (BuildContext context) => FittedBoxPage(),
       '/stack': (BuildContext context) => StackPage(),
       '/position': (BuildContext context) => PositionPage(),
+      '/overflowbox': (BuildContext context) => OverflowBoxPage(),
+      '/aspectradio': (BuildContext context) => AspectRadioPage(),
+      '/fractionallysizedbox':(BuildContext context) => FractionllySizedBoxPage(),
     },
   ),
 );
@@ -127,6 +133,23 @@ class LayoutDemo extends StatelessWidget {
               child: Text('positon'),
               onPressed: (){
                 Navigator.pushNamed(context, '/position');
+              },
+            ),
+            RaisedButton(
+              child: Text('overflowbox'),
+              onPressed: (){
+                Navigator.pushNamed(context, '/overflowbox');
+              },
+            ),
+            RaisedButton(
+              child: Text('aspectradio'),
+              onPressed: (){
+                Navigator.pushNamed(context, '/aspectradio');
+              },
+            ), RaisedButton(
+              child: Text('aspectradio'),
+              onPressed: (){
+                Navigator.pushNamed(context, '/fractionallysizedbox');
               },
             ),
           ],),
