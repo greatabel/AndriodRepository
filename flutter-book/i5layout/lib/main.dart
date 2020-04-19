@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:i5layout/align_page.dart';
 import 'package:i5layout/aspect_radio_page.dart';
 import 'package:i5layout/fittedbox_page.dart';
+import 'package:i5layout/gridview_page.dart';
 import 'package:i5layout/overflowbox_page.dart';
 import 'package:i5layout/paddingpage.dart';
 import 'package:i5layout/positon_page.dart';
@@ -21,6 +22,7 @@ void main() => runApp(
       '/overflowbox': (BuildContext context) => OverflowBoxPage(),
       '/aspectradio': (BuildContext context) => AspectRadioPage(),
       '/fractionallysizedbox':(BuildContext context) => FractionllySizedBoxPage(),
+      '/gridview':(BuildContext context) => GridViewPage(),
     },
   ),
 );
@@ -153,6 +155,16 @@ class LayoutDemo extends StatelessWidget {
               },
             ),
           ],),
+          Row(
+            children: <Widget>[
+              RaisedButton(
+                child: Text('gridview'),
+                onPressed: (){
+                  Navigator.pushNamed(context, '/gridview');
+                },
+              ),
+            ],
+          )
         ],
       ),
     );
