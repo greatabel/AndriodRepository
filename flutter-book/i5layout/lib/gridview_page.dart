@@ -44,7 +44,7 @@ class _GridViewPage extends State<GridViewPage>{
             decoration: BoxDecoration(
             gradient: RadialGradient(colors: [
             Colors.blue,
-            Colors.red,
+            Colors.cyan,
             ], radius: 0.85, focal: Alignment.center),
             ),
             child: buildGrid(),),

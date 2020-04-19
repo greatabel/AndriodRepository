@@ -8,6 +8,7 @@ import 'package:i5layout/paddingpage.dart';
 import 'package:i5layout/positon_page.dart';
 import 'package:i5layout/stack_page.dart';
 import 'package:i5layout/fractionllysizedbox_page.dart';
+import 'package:i5layout/table_page.dart';
 
 void main() => runApp(
   MaterialApp(
@@ -23,6 +24,7 @@ void main() => runApp(
       '/aspectradio': (BuildContext context) => AspectRadioPage(),
       '/fractionallysizedbox':(BuildContext context) => FractionllySizedBoxPage(),
       '/gridview':(BuildContext context) => GridViewPage(),
+      '/table':(BuildContext context) => TablePage(),
     },
   ),
 );
@@ -161,6 +163,11 @@ class LayoutDemo extends StatelessWidget {
                 child: Text('gridview'),
                 onPressed: (){
                   Navigator.pushNamed(context, '/gridview');
+                },
+              ),RaisedButton(
+                child: Text('table'),
+                onPressed: (){
+                  Navigator.pushNamed(context, '/table');
                 },
               ),
             ],
