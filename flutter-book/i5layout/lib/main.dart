@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:i5layout/align_page.dart';
 import 'package:i5layout/fittedbox_page.dart';
 import 'package:i5layout/paddingpage.dart';
+import 'package:i5layout/positon_page.dart';
 import 'package:i5layout/stack_page.dart';
 
 void main() => runApp(
@@ -13,6 +14,7 @@ void main() => runApp(
       '/align': (BuildContext context) => AlignPage(),
       '/fittedbox': (BuildContext context) => FittedBoxPage(),
       '/stack': (BuildContext context) => StackPage(),
+      '/position': (BuildContext context) => PositionPage(),
     },
   ),
 );
@@ -118,7 +120,16 @@ class LayoutDemo extends StatelessWidget {
                 Navigator.pushNamed(context, '/stack');
               },
             ),
-          ],)
+
+          ],),
+          Row(children: <Widget>[
+            RaisedButton(
+              child: Text('positon'),
+              onPressed: (){
+                Navigator.pushNamed(context, '/position');
+              },
+            ),
+          ],),
         ],
       ),
     );
