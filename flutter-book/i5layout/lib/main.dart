@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:i5layout/align_page.dart';
+import 'package:i5layout/fittedbox_page.dart';
 import 'package:i5layout/paddingpage.dart';
+import 'package:i5layout/stack_page.dart';
 
 void main() => runApp(
   MaterialApp(
@@ -9,7 +11,8 @@ void main() => runApp(
     routes: {
       '/padding': (BuildContext context) => PaddingPage(),
       '/align': (BuildContext context) => AlignPage(),
-
+      '/fittedbox': (BuildContext context) => FittedBoxPage(),
+      '/stack': (BuildContext context) => StackPage(),
     },
   ),
 );
@@ -101,6 +104,18 @@ class LayoutDemo extends StatelessWidget {
               child: Text('align'),
               onPressed: (){
                 Navigator.pushNamed(context, '/align');
+              },
+            ),
+            RaisedButton(
+              child: Text('fittedbox'),
+              onPressed: (){
+                Navigator.pushNamed(context, '/fittedbox');
+              },
+            ),
+            RaisedButton(
+              child: Text('stack'),
+              onPressed: (){
+                Navigator.pushNamed(context, '/stack');
               },
             ),
           ],)
