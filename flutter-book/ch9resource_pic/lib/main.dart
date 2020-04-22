@@ -98,7 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              '你好 flutter',
+              style: new TextStyle(fontFamily: 'myfont', fontSize: 36.0),
             ),
             Text(
               '$_counter',
