@@ -12,7 +12,7 @@ void main() => runApp(MaterialApp(
   theme: mDefaultTheme,
   //添加路由表
   routes: <String, WidgetBuilder>{
-    "app": (BuildContext context) => null,
+    "app": (BuildContext context) => App(),
     "/friends": (_) => WebviewScaffold(
       //Webview插件
       url: "https://flutter.io/",
@@ -22,7 +22,7 @@ void main() => runApp(MaterialApp(
       withZoom: true,
       withLocalStorage: true,
     ),
-    'search': (BuildContext context) => null, //搜索页面路由
+    'search': (BuildContext context) => Search(), //搜索页面路由
   },
   //指定首页 默认为加载页面
   home: LoadingPage(),
