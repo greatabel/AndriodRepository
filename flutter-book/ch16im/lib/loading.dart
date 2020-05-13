@@ -10,7 +10,7 @@ class _LoadingState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
-    new Future.delayed(Duration(seconds: 3), (){
+    new Future.delayed(Duration(seconds: 1), (){
       print("Flutter app ui 实现...");
       Navigator.of(context).pushReplacementNamed("app");
     });
