@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>demo.html</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style type="text/css">
+
+
+
+h1 { font-size: 12pt; }
+
+.back {
+    padding: 15px 15px;
+    font-size: 15pt; //change this to your desired size
+    line-height: normal;
+
+    width:20%;    
+    color: white;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*#image-container {
+  height: 400px;
+  width: 400px;
+  position: relative;
+}*/
+
+/*#my_image {
+  position: absolute;
+  left: 0;
+  top: 0;
+}*/
+
+
+/*
+place 1
+*/
+
+#text_p1a {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  left: 50px;
+  top: 300px;
+}
+
+#text_p1b {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  left: 50px;
+  top: 150px;
+}
+
+#text_p1c {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  left: 150px;
+  top: 200px;
+}
+
+
+#text_p1d {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  left: 280px;
+  top: 300px;
+}
+
+/*
+place 2
+*/
+
+#text_p2a {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  left: 50px;
+  top: 250px;
+}
+
+#text_p2b {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  left: 150px;
+  top: 250px;
+}
+
+#text_p2c {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  left: 220px;
+  top: 200px;
+}
+
+#text_p2d {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  left: 270px;
+  top: 200px;
+}
+
+
+
+</style>
+
+  </head>
+  <body>
+
+    <br/>
+    <nav class="navbar navbar-dark bg-primary" >
+  <!-- Navbar content -->
+<!--          <a href="i2placelist.html" class="back">
+    << 
+    </a> -->
+    <a class="navbar-brand back" href="i2placelist.html" >Back</a>
+    </nav>
+
+  <hr/>
+
+<div class="image-container">
+    <img id="my_image" src="static/default.jpg" style="width: 90%;">
+
+    <div id="div0" style="display: none">
+    <p id="text_p1a" style="color:red;font-weight: bold;">
+    P1A
+    </p>
+    <p id="text_p1b" style="color:red;font-weight: bold;">
+    P1B
+    </p>
+    <p id="text_p1c" style="color:red;font-weight: bold;">
+    P1C
+    </p>
+    <p id="text_p1d" style="color:red;font-weight: bold;">
+    P1D
+    </p>
+    </div>
+
+    <div id="div1" style="display: none">
+    <p id="text_p2a" >
+    P2A
+    </p>
+    <p id="text_p2b" >
+    P2B
+    </p>
+    <p id="text_p2c" >
+    P2C
+    </p>
+    <p id="text_p2d" >
+    P2D
+    </p>
+    </div>
+
+</div>
+
+
+  <hr/>
+        <h1 id="showDivCondition" style="color:blue;font-size:12px;"> </h1>
+          <hr/><br/><br/>
+
+<select onchange="getval(this, 'start');">
+  <option value="start">Start</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+</select>
+
+<select onchange="getval(this, 'end');">
+  <option value="start">End</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+</select>
+
+        <h1>start => end shortest chart path found by Dijkstras algorithm:</h1>
+        <h1 id="showDiv" style="color:red;font-size:12px;"> </h1>
+        <hr/>
+
+  <!-- 图的力导向图绘制在svg元素上，在html中定义一个svg元素-->
+<!--     <svg width="960" height="600"></svg> -->
+
+ <script>
+// https://stackoverflow.com/questions/22607150/getting-the-url-parameters-inside-the-html-page
+function GetURLParameter(sParam){
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
+
+
+        // var marge = {top:60,bottom:60,left:60,right:60}
+        // var svg = d3.select("svg")    //获取画布
+        // var width = svg.attr("width")  //画布的宽
+        // var height = svg.attr("height")   //画布的高
+        // var g = svg.append("g").attr("transform","translate("+marge.top+","+marge.left+")");
+        
+        // //结点数据
+        // var nodes=[ {name:"a"},
+        //             {name:"b"},
+        //             {name:"c"},
+        //             {name:"d"},
+        //            //  {name:"red"},
+        //             // {name:"yellow"},
+        // ];
+
+        //         //        [
+        //         //     ['A', [['B', 20], ['C', 50]] ], 
+        //         //     ['B', [['A', 30], ['C', 100]] ], 
+        //         //     ['C', [['D', 10], ['A', 30]] ], 
+        //         //     ['D', [['C', 10], ['B', 40]] ]
+        //         // ]
+
+        // //边数据，id是nodes数组中的元素下标
+        // var edges=[ {source:0,target:1},
+        //             {source:0,target:2},
+        //             {source:1,target:1},
+        //             {source:1,target:2},
+        //             {source:2,target:3},
+        //             {source:2,target:0},
+        //             {source:3,target:2},
+        //             {source:3,target:1},
+        //             // {source:0,target:4},
+        //             // {source:0,target:5},
+        //             // {source:1,target:0},
+        //             // {source:1,target:2},
+        //             // {source:1,target:3},
+        //             // {source:1,target:4},
+        //             // {source:1,target:5},
+        //             // {source:2,target:0},
+        // ];
+
+        // //设置一个color的颜色比例尺，为了让不同的顶点呈现不同的颜色
+        // var colorScale = d3.scaleOrdinal()
+        //     .domain(d3.range(nodes.length))
+        //     .range(d3.schemeCategory10);
+            
+        // //新建一个力导向图，固定语句
+        // var forceSimulation = d3.forceSimulation()
+        //     .force("link",d3.forceLink())
+        //     .force("charge",d3.forceManyBody())
+        //     .force("center",d3.forceCenter());
+
+        // //初始化力导向图，也就是传入数据
+        // //生成节点数据
+        // forceSimulation.nodes(nodes).on("tick",ticked);//on()方法用于绑定时间监听器，tick事件是力导向布局每隔一段时间就会做的事
+
+        // //生成边数据
+        // forceSimulation.force("link")
+        //     .links(edges)
+        //     .distance(function(d)
+        //     {   //每一边显示出来的长度
+        //         return Math.ceil((Math.random()+2)*100);
+        //     })      
+
+        // //设置图形的中心位置 
+        // forceSimulation.force("center").x(width/3).y(height/3); 
+
+        // //有了节点和边的数据后，我们开始绘制
+        // //绘制边。要先绘制边，之后绘制顶点
+        // var links = g.append("g")
+        //     .selectAll("line")   //选择所有"line"元素
+        //     .data(edges)   //将edges绑定上
+        //     .enter()
+        //     .append("line")
+        //     .attr("stroke",function(d,i)
+        //     {
+        //         return colorScale(i);  //这里决定了边的颜色
+        //     })
+        //     .attr("stroke-width",1);   //边的粗细
+
+        // //为边添加文字
+        // var linksText = g.append("g")
+        //     .selectAll("text")
+        //     .data(edges)   
+        //     .enter()
+        //     .append("text")
+        //     .text(function(d)
+        //     {
+        //         return "";  //这里返回的内容决定了每条边上显示的文字
+        //     })
+
+        // //绘制顶点
+        // var gs = g.selectAll(".circleText")
+        //     .data(nodes)
+        //     .enter()
+        //     .append("g")
+        //     .attr("transform",function(d,i){
+        //         var cirX = d.x;
+        //         var cirY = d.y;
+        //         return "translate("+cirX+","+cirY+")";
+        //     })
+        //     .call(d3.drag()  //drag是鼠标拖拽事件，start是鼠标左键按下时的事件。drag是拖住事件。ended是鼠标结束点击事件。
+        //         .on("start",started)   //started，drag，end是自定义的三个函数
+        //         .on("drag",dragged)
+        //         .on("end",ended)
+        //     );  
+
+        // //绘制节点
+        // gs.append("circle")
+        //     .attr("r",10)   //每个顶点的大小
+        //     .attr("fill",function(d,i)
+        //     {
+        //         return d3.rgb(d.name);  //颜色
+        //     })
+
+        // //顶点上的文字
+        // gs.append("text")
+        //     .attr("x",-10)
+        //     .attr("y",-20)
+        //     .attr("dy",10)
+        //     .text(function(d)
+        //     {
+        //         return d.name;
+        //     })
+        
+        // //有向图的边是用带箭头的线来表示。如果是无向图，不需要这段代码
+        // var marker= svg.append("marker")
+        //                 .attr("id", "resolved")
+        //                 .attr("markerUnits","userSpaceOnUse")
+        //                 .attr("viewBox", "0 -5 10 10")//坐标系的区域
+        //                 .attr("refX",26)//箭头在线上的位置，数值越小越靠近顶点
+        //                 .attr("refY", 0)
+        //                 .attr("markerWidth", 6)//箭头的大小（长度）
+        //                 .attr("markerHeight", 6)  //没用
+        //                 .attr("orient", "auto")//绘制方向，可设定为：auto（自动确认方向）和 角度值
+        //                 .attr("stroke-width",2)//箭头宽度
+        //                 .append("path")
+        //                 .attr("d", "M0,-5L10,0L0,5")//箭头的路径
+        //                 .attr('fill','#000000');//箭头颜色
+
+
+        // function ticked()
+        // {
+        //     links
+        //         .attr("x1",function(d){return d.source.x;})
+        //         .attr("y1",function(d){return d.source.y;})
+        //         .attr("x2",function(d){return d.target.x;})
+        //         .attr("y2",function(d){return d.target.y;})
+        //         .attr("marker-end", "url(#resolved)");
+
+        //     linksText
+        //         .attr("x",function(d)
+        //         {
+        //             return (d.source.x+d.target.x)/2;
+
+        //         })
+        //         .attr("y",function(d)
+        //         {
+        //             return (d.source.y+d.target.y)/2;
+        //         });
+
+        //     gs.attr("transform",function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+        // }
+
+        // function started(d)
+        // {
+        //     if(!d3.event.active)
+        //     {
+        //         forceSimulation.alphaTarget(0.8).restart();
+        //     }
+        //     d.fx = d.x;
+        //     d.fy = d.y;
+        // }
+
+        // function dragged(d)
+        // {
+        //     d.fx = d3.event.x;
+        //     d.fy = d3.event.y;
+        // }
+
+        // function ended(d)
+        // {
+        //     if(!d3.event.active)
+        //     {
+        //         forceSimulation.alphaTarget(0);
+                
+        //     }
+        //     d.fx = null;
+        //     d.fy = null;
+        // }
+
+//--dj
+
+var Dijkstras = (function () {
+
+    var Dijkstras = function () {
+        this.graph = [];
+        this.queue;
+        this.distance = [];
+        this.previous = []
+    }
+
+    /**
+    * Creates a graph from array.
+    * Each element in the array should be in the format:
+    *   [NODE NAME, [[NODE NAME, COST], ...] ]
+    *
+    * For example:  [
+    *       ['A', [['B', 20], ['C', 20]] ],
+    *       ['B', [['A', 30], ['C', 100]] ],
+    *       ['C', [['D', 10], ['A', 20]] ],
+    *       ['D', [['C', 10], ['B', 20]] ]
+    *   ]
+    *
+    * @param graphy Array of nodes and vertices.
+    **/
+    Dijkstras.prototype.settingGraph = function (graph)
+    {
+        // Error check graph
+        if (typeof graph !== 'object') {
+            throw "graph isn't an object (" + typeof graph + ")";
+        }
+
+        if (graph.length < 1) {
+            throw "graph is empty";
+        }
+
+        for (var index in graph) {
+            // Error check each node
+            var node = graph[index];
+            if (typeof node !== 'object' || node.length !== 2) {
+                throw "node must be an array and contain 2 values (name, vertices). Failed at index: " + index;
+            }
+
+            var nodeName = node[0];
+            var vertices = node[1];
+            this.graph[nodeName] = [];
+
+            for (var v in vertices) {
+                // Error check each node
+                var vertex = vertices[v];
+                if (typeof vertex !== 'object' || vertex.length !== 2) {
+                    throw "vertex must be an array and contain 2 values (name, vertices). Failed at index: " + index + "[" + v + "]" ;
+                }
+                var vertexName = vertex[0];
+                var vertexCost = vertex[1];
+                this.graph[nodeName][vertexName] = vertexCost;
+            }
+        }
+    }
+
+    /**
+    * Find shortest path
+    *
+    * @param source The starting node.
+    * @param target The target node.
+    * @return array Path to target, or empty array if unable to find path.
+    */
+    Dijkstras.prototype.getPath = function (source, target)
+    {
+        // Check source and target exist
+        if (typeof this.graph[source] === 'undefined') {
+            throw "source " + source + " doesn't exist";
+        }
+        if (typeof this.graph[target] === 'undefined') {
+            throw "target " + target + " doesn't exist";
+        }
+
+        // Already at target
+        if (source === target) {
+            return [];
+        }
+
+        // Reset all previous values
+        this.queue = new MyMinHeap();
+        this.queue.add(source, 0);
+        this.previous[source] = null;
+
+        // Loop all nodes
+        var u = null
+        while (u = this.queue.shift()) {
+            // Reached taget!
+            if (u === target) {
+                var path = [];
+                while (this.previous[u] != null) {
+                    path.unshift(u);
+                    u = this.previous[u];
+                }
+                return path;
+            }
+
+            // all remaining vertices are inaccessible from source
+            if (this.queue.getDistance(u) == Infinity) {
+                return [];
+            }
+
+            var uDistance = this.queue.getDistance(u)
+            for (var neighbour in this.graph[u]) {
+                var nDistance = this.queue.getDistance(neighbour),
+                    aDistance = uDistance + this.graph[u][neighbour];
+
+                if (aDistance < nDistance) {
+                    this.queue.update(neighbour, aDistance);
+                    this.previous[neighbour] = u;
+                }
+            }
+        }
+
+        return [];
+    }
+
+
+
+    // Fibonacci Heap (min first)
+    var MyMinHeap = (function() {
+        var MyMinHeap = function () {
+            this.min = null;
+            this.roots = [];
+            this.nodes = [];
+        }
+
+        MyMinHeap.prototype.shift = function()
+        {
+            var minNode = this.min;
+
+            // Current min is null or no more after it
+            if (minNode == null || this.roots.length < 1) {
+                this.min = null;
+                return minNode
+            }
+
+            // Remove it
+            this.remove(minNode);
+
+            // Consolidate
+            if (this.roots.length > 50) {
+                this.consolidate();
+            }
+
+            // Get next min
+            var lowestDistance = Infinity,
+                length = this.roots.length;
+
+            for (var i = 0; i < length; i++) {
+                var node = this.roots[i],
+                    distance = this.getDistance(node);
+
+                if (distance < lowestDistance) {
+                    lowestDistance = distance;
+                    this.min = node;
+                }
+            }
+
+            return minNode;
+        }
+
+        MyMinHeap.prototype.consolidate = function()
+        {
+            // Consolidate
+            var depths = [ [], [], [], [], [], [], [] ],
+                maxDepth = depths.length - 1, // 0-index
+                removeFromRoots = [];
+
+            // Populate depths array
+            var length = this.roots.length;
+            for (var i = 0; i < length; i++) {
+                var node = this.roots[i],
+                depth = this.nodes[node].depth;
+
+                if (depth < maxDepth) {
+                    depths[depth].push(node);
+                }
+            }
+
+            // Consolidate
+            for (var depth = 0; depth <= maxDepth; depth++) {
+                while (depths[depth].length > 1) {
+
+                    var first = depths[depth].shift(),
+                        second = depths[depth].shift(),
+                        newDepth = depth + 1,
+                        pos = -1;
+
+                    if (this.nodes[first].distance < this.nodes[second].distance) {
+                        this.nodes[first].depth = newDepth;
+                        this.nodes[first].children.push(second);
+                        this.nodes[second].parent = first;
+
+                        if (newDepth <= maxDepth) {
+                            depths[newDepth].push(first);
+                        }
+
+                        // Find position in roots where adopted node is
+                        pos = this.roots.indexOf(second);
+
+                    } else {
+                        this.nodes[second].depth = newDepth;
+                        this.nodes[second].children.push(first);
+                        this.nodes[first].parent = second;
+
+                        if (newDepth <= maxDepth) {
+                            depths[newDepth].push(second);
+                        }
+
+                        // Find position in roots where adopted node is
+                        pos = this.roots.indexOf(first);
+                    }
+
+                    // Remove roots that have been made children
+                    if (pos > -1) {
+                        this.roots.splice(pos, 1);
+                    }
+                }
+            }
+        }
+
+        MyMinHeap.prototype.add = function(node, distance)
+        {
+            // Add the node
+            this.nodes[node] = {
+                node: node,
+                distance: distance,
+                depth: 0,
+                parent: null,
+                children: []
+            };
+
+            // Is it the minimum?
+            if (!this.min || distance < this.nodes[this.min].distance) {
+                this.min = node;
+            }
+
+            // Other stuff
+            this.roots.push(node);
+        }
+
+        MyMinHeap.prototype.update = function(node, distance)
+        {
+            this.remove(node);
+            this.add(node, distance);
+        }
+
+        MyMinHeap.prototype.remove = function(node)
+        {
+            if (!this.nodes[node]) {
+                return;
+            }
+
+            // Move children to be children of the parent
+            var numChildren = this.nodes[node].children.length;
+            if (numChildren > 0) {
+                for (var i = 0; i < numChildren; i++) {
+                    var child = this.nodes[node].children[i];
+                    this.nodes[child].parent = this.nodes[node].parent;
+
+                    // No parent, then add to roots
+                    if (this.nodes[child].parent == null) {
+                        this.roots.push(child);
+                    }
+                }
+            }
+
+            var parent = this.nodes[node].parent;
+
+            // Root, so remove from roots
+            if (parent == null) {
+                var pos = this.roots.indexOf(node);
+                if (pos > -1) {
+                    this.roots.splice(pos, 1);
+                }
+            } else {
+                // Go up the parents and decrease their depth
+                while (parent) {
+                    this.nodes[parent].depth--;
+                    parent = this.nodes[parent].parent
+                }
+            }
+        }
+
+        MyMinHeap.prototype.getDistance = function(node)
+        {
+            if (this.nodes[node]) {
+                return this.nodes[node].distance;
+            }
+            return Infinity;
+        }
+
+        return MyMinHeap;
+    })();
+
+    return Dijkstras;
+})();
+
+var placeid = GetURLParameter('placeid');
+console.log('placeid=' +placeid);
+$("#my_image").attr("src","static/place"+placeid + ".jpg");
+$("#div"+placeid).show();
+
+
+var d = new Dijkstras();
+
+
+var connections =  [];
+
+//这里配置graph的节点 
+
+switch(placeid){
+    case "0":
+        connections =     [
+            ['A', [['B', 20], ['D', 50]] ], 
+            ['B', [['A', 20], ['C', 40]] ], 
+            ['C', [['B', 40] ] ], 
+            ['D', [['A', 50] ]]
+        ];
+        break;
+    case "1":
+        connections =     [
+            ['A', [['B', 20]] ], 
+            ['B', [['A', 20]] ], 
+            ['C', [['D', 10] ] ], 
+            ['D', [['C', 10] ]]
+        ];
+        break;
+    default:
+        break;
+
+}
+console.log(typeof connections, typeof "s", typeof placeid)
+
+d.settingGraph(
+  connections
+);
+document.getElementById("showDivCondition").innerHTML = "graph conneections: <br/>" + JSON.stringify(connections);
+      
+var start = "A";
+var end = "D";
+// https://stackoverflow.com/questions/11179406/jquery-get-value-of-select-onchange
+function getval(sel, which)
+{
+    
+    if ( which == "start"){
+        start = sel.value;
+    } 
+    if (which == "end"){
+        end = sel.value;
+    }
+    // alert(start + '#' + end);
+    var path = d.getPath(start, end);
+    console.log(path);
+
+    var s = JSON.stringify(path);
+    document.getElementById("showDiv").innerHTML = s;
+          
+}
+
+
+    </script>
+
+  </body>
+
+</html>
