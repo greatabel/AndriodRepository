@@ -58,6 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  // https://daily-dev-tips.com/posts/flutter-bottom-tabbar-placement/
+  // mutiple tab
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,7 +110,17 @@ class _MyHomePageState extends State<MyHomePage> {
             }
           },
         )
-      )
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.book), label: '学习'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.directions_transit), label: '考试'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.people), label: '个人'),
+        ],
+      ),
     );
   }
 }
