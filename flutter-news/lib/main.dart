@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
@@ -71,7 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
           future: _readCounter(),
           builder: (BuildContext context, AsyncSnapshot snapshot){
             if(snapshot.connectionState == ConnectionState.done){
-              if(snapshot.hasError){
+              print("snapshot.hasError >>>>>#####>>>");
+              print(snapshot.hasError);
+              // 排除ios 这里出错
+              if(snapshot.hasError && Platform.isAndroid){
                 return const Text("请求失败");
               }else{
                 var resJson = snapshot.data.toString();
@@ -112,13 +116,16 @@ class _MyHomePageState extends State<MyHomePage> {
         )
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, ///This allow more than 3 items
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.book), label: '学习'),
           BottomNavigationBarItem(
+              icon: Icon(Icons.directions_transit), label: '工号'),
+          BottomNavigationBarItem(
               icon: Icon(Icons.directions_transit), label: '考试'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.people), label: '个人'),
+              icon: Icon(Icons.people), label: '我的'),
         ],
       ),
     );
