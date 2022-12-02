@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'recipe.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -61,7 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // 3
       body: SafeArea(
         // 4
-        child: Container(),
+        child: ListView.builder(
+          itemCount: Recipe.samples.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Text(Recipe.samples[index].label);
+          },
+        ),
       ),
     );
   }
