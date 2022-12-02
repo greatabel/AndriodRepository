@@ -49,6 +49,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  Widget buildRecipeCard(Recipe recipe) {
+  // 1
+  return Card(
+  // 2
+  child: Column(
+  // 3
+  children: <Widget>[
+  // 4
+  Image(image: AssetImage(recipe.imageUrl)),
+  // 5
+    Text(recipe.label),
+      ],
+    ),
+   );
+  }
+
   @override
   Widget build(BuildContext context) {
     // 1
@@ -65,8 +82,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView.builder(
           itemCount: Recipe.samples.length,
           itemBuilder: (BuildContext context, int index) {
-            return Text(Recipe.samples[index].label);
+            // return Text(Recipe.samples[index].label);
+            return buildRecipeCard(Recipe.samples[index]);
           },
+
         ),
       ),
     );
