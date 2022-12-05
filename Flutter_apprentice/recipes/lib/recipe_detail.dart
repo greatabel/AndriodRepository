@@ -19,6 +19,8 @@ Widget build(BuildContext context) {
   // 1
   return Scaffold(
     appBar: AppBar(
+      backgroundColor: Colors.red,
+      centerTitle: true,
       title: Text(widget.recipe.label),
     ),
     // 2
